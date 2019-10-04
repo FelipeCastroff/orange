@@ -31,6 +31,7 @@ const getWidth = () => {
  */
 const HomepageHeading = ({ mobile }) => (
   <Container text>
+    <div className='PanelImagen'>
     <Header
       as="h1"
       content="Imagine-a-Company"
@@ -42,6 +43,8 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? "1.5em" : "3em"
       }}
     />
+    </div>
+    
     <Header
       as="h2"
       content="Do whatever you want when you want to."
@@ -99,11 +102,17 @@ class DesktopContainer extends Component {
             >
               <Container>
                 <Menu.Item as="a" active>
-                  Home
+                  <a href='/' > HOME</a>
                 </Menu.Item>
-                <Menu.Item as="a">Work</Menu.Item>
-                <Menu.Item as="a">Company</Menu.Item>
-                <Menu.Item as="a">Careers</Menu.Item>
+                <Menu.Item as="a">
+                  <a href='/boton1'> BOTON 1</a>
+                </Menu.Item>
+                <Menu.Item as="a">
+                  <a href='/boton2'> BOTON 2</a>
+                </Menu.Item>
+                <Menu.Item as="a">
+                  <a href='/boton3'> BOTON 3</a>
+                </Menu.Item>
                 <Menu.Item position="right">
                   <Button as="a" inverted={!fixed}>
                     Log in
