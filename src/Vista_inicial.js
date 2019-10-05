@@ -15,6 +15,7 @@ import {
   Sidebar,
   Visibility
 } from "semantic-ui-react";
+import Imagen1 from './Imagenes/Imagen1.png';
 
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
@@ -32,19 +33,19 @@ const getWidth = () => {
 const HomepageHeading = ({ mobile }) => (
   <Container text>
     <div className='PanelImagen'>
-    <Header
-      as="h1"
-      content="Imagine-a-Company"
-      inverted
-      style={{
-        fontSize: mobile ? "2em" : "4em",
-        fontWeight: "normal",
-        marginBottom: 0,
-        marginTop: mobile ? "1.5em" : "3em"
-      }}
-    />
+      <Header
+        as="h1"
+        content="Speech Service"
+        inverted
+        style={{
+          fontSize: mobile ? "2em" : "4em",
+          fontWeight: "normal",
+          marginBottom: 0,
+          marginTop: mobile ? "1.5em" : "3em"
+        }}
+      />
     </div>
-    
+
     <Header
       as="h2"
       content="Do whatever you want when you want to."
@@ -55,7 +56,7 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? "0.5em" : "1.5em"
       }}
     />
-    <Button primary size="huge">
+    <Button primary size="huge" href = 'https://www.youtube.com/watch?v=n7ovPp1RAew&feature=youtu.be'>
       Get Started
       <Icon name="right arrow" />
     </Button>
@@ -111,7 +112,7 @@ class DesktopContainer extends Component {
                   <a href='/boton2'> BOTON 2</a>
                 </Menu.Item>
                 <Menu.Item as="a">
-                  <a href='/boton3'> BOTON 3</a>
+                  <a href='/boton3'> BOTON 3 </a>
                 </Menu.Item>
                 <Menu.Item position="right">
                   <Button as="a" inverted={!fixed}>
@@ -231,12 +232,13 @@ const HomepageLayout = () => (
         <Grid.Row>
           <Grid.Column width={8}>
             <Header as="h3" style={{ fontSize: "2em" }}>
-              We Help Companies and Companions
+            ¿Qué son los servicios Voz?
             </Header>
             <p style={{ fontSize: "1.33em" }}>
-              We can give your company superpowers to do things that they never
-              thought possible. Let us delight your customers and empower your
-              needs... through pure data analytics.
+            Los servicios de voz de Azure se dividen en 3 categorías las cuales estan formadas por 
+            los servicios de voz a texto, texto a voz y traducción de voz.
+            Ademas de facilitar este trabajo con el SDK de voz, el SDK de dispositivos de voz
+            o las API de Rest.
             </p>
             <Header as="h3" style={{ fontSize: "2em" }}>
               We Make Bananas That Can Dance
@@ -250,8 +252,8 @@ const HomepageLayout = () => (
             <Image
               bordered
               rounded
-              size="large"
-              src="https://fsmedia.imgix.net/79/fe/e8/24/2647/4c79/89d9/3c75e1ecf00c/shrek-2jpg.jpeg?auto=compress&h=1200&w=1200&crop=edges&fit=crop"
+              size="medium"
+              src={Imagen1}
             />
           </Grid.Column>
         </Grid.Row>
@@ -328,21 +330,27 @@ const HomepageLayout = () => (
         <Grid divided inverted stackable>
           <Grid.Row>
             <Grid.Column width={3}>
-              <Header inverted as="h4" content="About" />
+              <Header inverted as="h4" content="Contactanos" />
               <List link inverted>
-                <List.Item as="a">Sitemap</List.Item>
-                <List.Item as="a">Contact Us</List.Item>
-                <List.Item as="a">Religious Ceremonies</List.Item>
-                <List.Item as="a">Gazebo Plans</List.Item>
+                <List.Item as="a" href='https://p7.hiclipart.com/preview/405/543/746/dio-brando-internet-meme-know-your-meme-rage-comic-jojo-s-bizarre-adventure-others.jpg'>
+                  Dio</List.Item>
+                <List.Item as="a" href = 'https://www.trifenix.io'>Contact Us</List.Item>
+                <List.Item as="a" >+56952984672</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header inverted as="h4" content="Services" />
+              <Header inverted as="h4" content="Instagrams" />
               <List link inverted>
-                <List.Item as="a">Banana Pre-Order</List.Item>
-                <List.Item as="a">DNA FAQ</List.Item>
-                <List.Item as="a">How To Access</List.Item>
-                <List.Item as="a">Favorite X-Men</List.Item>
+                <List.Item as="a" href='https://www.instagram.com/_alondra_hg/?hl=es-la'>
+                  Sofia Gallardo</List.Item>
+                <List.Item as="a" href='https://www.instagram.com/weon.simio/?hl=es-la'>
+                  Fernando Del Pino</List.Item>
+                <List.Item as="a" href='https://www.instagram.com/ignacio_lopez_nicolas/?hl=es-la'>
+                  Ignacio Lopez</List.Item>
+                <List.Item as="a" href='https://www.instagram.com/felipe_castro.exe/?hl=es-la'>
+                  Felipe Castro</List.Item>
+                <List.Item as='a' href='https://www.instagram.com/trifenix.io/?hl=es-la'>
+                  Trifeniz.io</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
