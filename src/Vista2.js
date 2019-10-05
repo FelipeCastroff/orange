@@ -15,7 +15,7 @@ import {
   Sidebar,
   Visibility
 } from "semantic-ui-react";
-import Vista_inicial from './Vista_inicial';
+import Vista_inicial from "./Vista_inicial";
 
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
@@ -31,7 +31,32 @@ const getWidth = () => {
  * such things.
  */
 const HomepageHeading = ({ mobile }) => (
-  <Container>
+  <Container text>
+    <Header
+      as="h1"
+      content="Imagine-a-Company"
+      inverted
+      style={{
+        fontSize: mobile ? "2em" : "4em",
+        fontWeight: "normal",
+        marginBottom: 0,
+        marginTop: mobile ? "1.5em" : "3em"
+      }}
+    />
+    <Header
+      as="h2"
+      content="Do whatever you want when you want to."
+      inverted
+      style={{
+        fontSize: mobile ? "1.5em" : "1.7em",
+        fontWeight: "normal",
+        marginTop: mobile ? "0.5em" : "1.5em"
+      }}
+    />
+    <Button primary size="huge">
+      Get Started
+      <Icon name="right arrow" />
+    </Button>
   </Container>
 );
 
@@ -44,7 +69,9 @@ HomepageHeading.propTypes = {
  * It can be more complicated, but you can create really flexible markup.
  */
 class DesktopContainer extends Component {
-  state = { show: true };
+  state = {
+    show: true
+  };
 
   hideFixedMenu = () => this.setState({ fixed: false });
   showFixedMenu = () => this.setState({ fixed: true });
@@ -58,7 +85,10 @@ class DesktopContainer extends Component {
 
     if (this.state.show === true) {
       return (
-        <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
+        <Responsive
+          getWidth={getWidth}
+          minWidth={Responsive.onlyTablet.minWidth}
+        >
           <Visibility
             once={false}
             onBottomPassed={this.showFixedMenu}
@@ -78,22 +108,18 @@ class DesktopContainer extends Component {
                 size="large"
               >
                 <Container>
-                  <Menu.Item as="a" /*Ojo con esto en el boton1 onClick={this.toggleShow}*/>
-                    <a href='/'>HOME</a>
-                  </Menu.Item>
-                  <Menu.Item as="a">
-                    <a href='/boton1'> BOTON 1</a>
-                  </Menu.Item>
-                  <Menu.Item as="a">
-                    <a href='/boton2'> BOTON 2</a>
+                  <Menu.Item as="a" onClick={this.toggleShow}>
+                    Home
                   </Menu.Item>
                   <Menu.Item as="a" active>
-                    <a href='/boton3' > BOTON 3</a>
+                    Work
                   </Menu.Item>
+                  <Menu.Item as="a">Company</Menu.Item>
+                  <Menu.Item as="a">Careers</Menu.Item>
                   <Menu.Item position="right">
                     <Button as="a" inverted={!fixed}>
                       Log in
-                  </Button>
+                    </Button>
                     <Button
                       as="a"
                       inverted={!fixed}
@@ -101,7 +127,7 @@ class DesktopContainer extends Component {
                       style={{ marginLeft: "0.5em" }}
                     >
                       Sign Up
-                  </Button>
+                    </Button>
                   </Menu.Item>
                 </Container>
               </Menu>
@@ -114,7 +140,6 @@ class DesktopContainer extends Component {
       );
     } else {
       return <Vista_inicial></Vista_inicial>;
-
     }
   }
 }
@@ -122,14 +147,14 @@ class DesktopContainer extends Component {
 DesktopContainer.propTypes = {
   children: PropTypes.node
 };
-//Puede ser la vista de celular//
+
 class MobileContainer extends Component {
-  state = {show:true};
+  state = {
+    show: true
+  };
 
   handleSidebarHide = () => this.setState({ sidebarOpened: false });
-
   handleToggle = () => this.setState({ sidebarOpened: true });
-
   toggleShow = () => {
     this.setState({ show: false });
   };
@@ -154,8 +179,10 @@ class MobileContainer extends Component {
           >
             <Menu.Item as="a" active>
               Home
-          </Menu.Item>
-            <Menu.Item as="a" onClick={this.toggleShow}>Work</Menu.Item>
+            </Menu.Item>
+            <Menu.Item as="a" onClick={this.toggleShow}>
+              Work
+            </Menu.Item>
             <Menu.Item as="a">Company</Menu.Item>
             <Menu.Item as="a">Careers</Menu.Item>
             <Menu.Item as="a">Log in</Menu.Item>
@@ -177,10 +204,10 @@ class MobileContainer extends Component {
                   <Menu.Item position="right">
                     <Button as="a" inverted>
                       Log in
-                  </Button>
+                    </Button>
                     <Button as="a" inverted style={{ marginLeft: "0.5em" }}>
                       Sign Up
-                  </Button>
+                    </Button>
                   </Menu.Item>
                 </Menu>
               </Container>
@@ -191,8 +218,7 @@ class MobileContainer extends Component {
           </Sidebar.Pusher>
         </Responsive>
       );
-    }
-    else {
+    } else {
       return <Vista_inicial></Vista_inicial>;
     }
   }
@@ -214,35 +240,124 @@ ResponsiveContainer.propTypes = {
 };
 
 const HomepageLayout = () => (
-  <ResponsiveContainer> 
-    <Segment style={{ padding: "8em 0em" }} vertical>{/*De aquí para abajo es la aprte de abajo*/}
+  <ResponsiveContainer>
+    <Segment style={{ padding: "8em 0em" }} vertical>
+      <Grid container stackable verticalAlign="middle">
+        <Grid.Row>
+          <Grid.Column width={8}>
+            <Header as="h3" style={{ fontSize: "2em" }}>
+              We Help Companies and Companions
+            </Header>
+            <p style={{ fontSize: "1.33em" }}>
+              We can give your company superpowers to do things that they never
+              thought possible. Let us delight your customers and empower your
+              needs... through pure data analytics.
+            </p>
+            <Header as="h3" style={{ fontSize: "2em" }}>
+              We Make Bananas That Can Dance
+            </Header>
+            <p style={{ fontSize: "1.33em" }}>
+              Yes that's right, you thought it was the stuff of dreams, but even
+              bananas can be bioengineered.
+            </p>
+          </Grid.Column>
+          <Grid.Column floated="right" width={6}>
+            <Image
+              bordered
+              rounded
+              size="large"
+              src="https://as.com/meristation/imagenes/2019/01/31/noticias/1548966634_757466_1548966672_noticia_normal.jpg"
+            />
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column textAlign="center">
+            <Button size="huge">Check Them Out</Button>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Segment>
+    <Segment style={{ padding: "0em" }} vertical>
+      <Grid celled="internally" columns="equal" stackable>
+        <Grid.Row textAlign="center">
+          <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
+            <Header as="h3" style={{ fontSize: "2em" }}>
+              "What a Company"
+            </Header>
+            <p style={{ fontSize: "1.33em" }}>
+              That is what they all say about us
+            </p>
+          </Grid.Column>
+          <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
+            <Header as="h3" style={{ fontSize: "2em" }}>
+              "I shouldn't have gone with their competitor."
+            </Header>
+            <p style={{ fontSize: "1.33em" }}>
+              <Image
+                avatar
+                src="https://fsmedia.imgix.net/79/fe/e8/24/2647/4c79/89d9/3c75e1ecf00c/shrek-2jpg.jpeg?auto=compress&h=1200&w=1200&crop=edges&fit=crop"
+              />
+              <b>Nan</b> Chief Fun Officer Acme Toys
+            </p>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Segment>
+    <Segment style={{ padding: "8em 0em" }} vertical>
+      <Container text>
+        <Header as="h3" style={{ fontSize: "2em" }}>
+          Breaking The Grid, Grabs Your Attention
+        </Header>
+        <p style={{ fontSize: "1.33em" }}>
+          Instead of focusing on content creation and hard work, we have learned
+          how to master the art of doing nothing by providing massive amounts of
+          whitespace and generic content that can seem massive, monolithic and
+          worth your attention.
+        </p>
+        <Button as="a" size="large">
+          Read More
+        </Button>
+        <Divider
+          as="h4"
+          className="header"
+          horizontal
+          style={{ margin: "3em 0em", textTransform: "uppercase" }}
+        >
+          <a href="#">Case Studies</a>
+        </Divider>
+        <Header as="h3" style={{ fontSize: "2em" }}>
+          Did We Tell You About Our Bananas?
+        </Header>
+        <p style={{ fontSize: "1.33em" }}>
+          Yes I know you probably disregarded the earlier boasts as non-sequitur
+          filler content, but it's really true. It took years of gene splicing
+          and combinatory DNA research, but our bananas can really dance.
+        </p>
+        <Button as="a" size="large">
+          I'm Still Quite Interested
+        </Button>
+      </Container>
     </Segment>
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
       <Container>
         <Grid divided inverted stackable>
           <Grid.Row>
             <Grid.Column width={3}>
-              <Header inverted as="h4" content="Contactanos" />
+              <Header inverted as="h4" content="About" />
               <List link inverted>
-                <List.Item as="a" href='https://p7.hiclipart.com/preview/405/543/746/dio-brando-internet-meme-know-your-meme-rage-comic-jojo-s-bizarre-adventure-others.jpg'>
-                  Dio</List.Item>
-                <List.Item as="a" href='https://www.trifenix.io'>Contact Us</List.Item>
-                <List.Item as="a" >+56952984672</List.Item>
+                <List.Item as="a">Sitemap</List.Item>
+                <List.Item as="a">Contact Us</List.Item>
+                <List.Item as="a">Religious Ceremonies</List.Item>
+                <List.Item as="a">Gazebo Plans</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Header inverted as="h4" content="Instagrams" />
+              <Header inverted as="h4" content="Services" />
               <List link inverted>
-                <List.Item as="a" href='https://www.instagram.com/_alondra_hg/?hl=es-la'>
-                  Sofia Gallardo</List.Item>
-                <List.Item as="a" href='https://www.instagram.com/weon.simio/?hl=es-la'>
-                  Fernando Del Pino</List.Item>
-                <List.Item as="a" href='https://www.instagram.com/ignacio_lopez_nicolas/?hl=es-la'>
-                  Ignacio Lopez</List.Item>
-                <List.Item as="a" href='https://www.instagram.com/felipe_castro.exe/?hl=es-la'>
-                  Felipe Castro</List.Item>
-                <List.Item as='a' href='https://www.instagram.com/trifenix.io/?hl=es-la'>
-                  Trifeniz.io</List.Item>
+                <List.Item as="a">Banana Pre-Order</List.Item>
+                <List.Item as="a">DNA FAQ</List.Item>
+                <List.Item as="a">How To Access</List.Item>
+                <List.Item as="a">Favorite X-Men</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
