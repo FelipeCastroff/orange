@@ -13,10 +13,14 @@ import {
   Responsive,
   Segment,
   Sidebar,
-  Visibility
+  Visibility,
+  Card
 } from "semantic-ui-react";
-import Imagen1 from './Imagenes/Imagen1.png';
-
+import Imagen1 from '../Imagenes/Imagen1.png';
+import VozTexto from '../Imagenes/speech-text.png';
+import TextoVoz from '../Imagenes/text-to-speech.png';
+import TextoTra from '../Imagenes/speech-translation.png';
+import './inicial.css';
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
 // For more advanced usage please check Responsive docs under the "Usage" section.
@@ -56,7 +60,7 @@ const HomepageHeading = ({ mobile }) => (
         marginTop: mobile ? "0.5em" : "1.5em"
       }}
     />
-    <Button primary size="huge" href = 'https://www.youtube.com/watch?v=n7ovPp1RAew&feature=youtu.be'>
+    <Button primary size="huge" href='https://www.youtube.com/watch?v=n7ovPp1RAew&feature=youtu.be'>
       Get Started
       <Icon name="right arrow" />
     </Button>
@@ -232,21 +236,15 @@ const HomepageLayout = () => (
         <Grid.Row>
           <Grid.Column width={8}>
             <Header as="h3" style={{ fontSize: "2em" }}>
-            ¿Qué son los servicios Voz?
+              ¿Qué son los servicios Voz?
             </Header>
             <p style={{ fontSize: "1.33em" }}>
-            Los servicios de voz de Azure se dividen en 3 categorías las cuales estan formadas por 
-            los servicios de voz a texto, texto a voz y traducción de voz.
-            Ademas de facilitar este trabajo con el SDK de voz, el SDK de dispositivos de voz
-            o las API de Rest.
+              Los servicios de voz de Azure se dividen en 3 categorías las cuales estan formadas por
+              los servicios de voz a texto, texto a voz y traducción de voz.
+              Ademas de facilitar este trabajo con el SDK de voz, el SDK de dispositivos de voz
+              o las API de Rest.
             </p>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              We Make Bananas That Can Dance
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              Yes that's right, you thought it was the stuff of dreams, but even
-              bananas can be bioengineered.
-            </p>
+
           </Grid.Column>
           <Grid.Column floated="right" width={6}>
             <Image
@@ -258,72 +256,42 @@ const HomepageLayout = () => (
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column textAlign="center">
-            <Button size="huge">Check Them Out</Button>
-          </Grid.Column>
+
         </Grid.Row>
       </Grid>
     </Segment>
-    <Segment style={{ padding: "0em" }} vertical>
-      <Grid celled="internally" columns="equal" stackable>
-        <Grid.Row textAlign="center">
-          <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              "What a Company"
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              That is what they all say about us
-            </p>
+    <Segment textAlign='center' vertical >
+      <Header  as='h2'> Estos son los servicios de voz 
+      <Header.Subheader>
+      <br></br>
+      Convierta audio en texto, traduzca voz y convierta texto en voz con los servicios de voz unificados
+    </Header.Subheader>
+      </Header>
+<br></br>
+      <Grid centered columns={4}>
+        <Grid.Row >
+          <Grid.Column className = 'sombra'>
+            <Image src={VozTexto} centered/>
+            <h3 > Speech to Text </h3>
+            <span> La transcripción de conversaciones captura la voz en tiempo real para que todos los participantes de la reunión puedan participar de lleno en la discusión, identificar lo que ha dicho cada uno y cuándo se ha dicho y continuar rápidamente con los pasos siguientes.</span>
           </Grid.Column>
-          <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              "I shouldn't have gone with their competitor."
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              <Image
-                avatar
-                src="https://fsmedia.imgix.net/79/fe/e8/24/2647/4c79/89d9/3c75e1ecf00c/shrek-2jpg.jpeg?auto=compress&h=1200&w=1200&crop=edges&fit=crop"
-              />
-              <b>Nan</b> Chief Fun Officer Acme Toys
-            </p>
+<br></br>
+<br></br>
+          <Grid.Column className='sombra'>
+            <Image src={TextoVoz} centered />
+            <h3 > Text to Speech </h3>
+            <span> Compile aplicaciones y servicios que se dirijan a los usuarios de forma natural, por lo que mejorarán la accesibilidad y la usabilidad. Convierta texto en audio en tiempo casi real, reprodúzcalo y guárdelo como archivo para usarlo más adelante. Text to Speech está disponible en las versiones Neural y Standard.</span>
+          </Grid.Column>
+<br></br>
+<br></br>
+          <Grid.Column className='sombra'>
+            <Image src={TextoTra} centered />
+            <h3 > Traducción de voz </h3>
+            <span> Incorpore a su aplicación funcionalidad de traducción de voz en tiempo real para cualquiera de los idiomas admitidos y reciba la traducción en forma de texto o de voz. Los modelos de Speech Translation se basan en tecnologías vanguardistas de reconocimiento de voz y traducción automática neuronal (NMT). Están optimizados para comprender la forma de hablar de las personas en la vida real y generar traducciones de una calidad excepcional.</span>
+
           </Grid.Column>
         </Grid.Row>
       </Grid>
-    </Segment>
-    <Segment style={{ padding: "8em 0em" }} vertical>
-      <Container text>
-        <Header as="h3" style={{ fontSize: "2em" }}>
-          Breaking The Grid, Grabs Your Attention
-        </Header>
-        <p style={{ fontSize: "1.33em" }}>
-          Instead of focusing on content creation and hard work, we have learned
-          how to master the art of doing nothing by providing massive amounts of
-          whitespace and generic content that can seem massive, monolithic and
-          worth your attention.
-        </p>
-        <Button as="a" size="large">
-          Read More
-        </Button>
-        <Divider
-          as="h4"
-          className="header"
-          horizontal
-          style={{ margin: "3em 0em", textTransform: "uppercase" }}
-        >
-          <a href="#">Case Studies</a>
-        </Divider>
-        <Header as="h3" style={{ fontSize: "2em" }}>
-          Did We Tell You About Our Bananas?
-        </Header>
-        <p style={{ fontSize: "1.33em" }}>
-          Yes I know you probably disregarded the earlier boasts as non-sequitur
-          filler content, but it's really true. It took years of gene splicing
-          and combinatory DNA research, but our bananas can really dance.
-        </p>
-        <Button as="a" size="large">
-          I'm Still Quite Interested
-        </Button>
-      </Container>
     </Segment>
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
       <Container>
@@ -334,7 +302,7 @@ const HomepageLayout = () => (
               <List link inverted>
                 <List.Item as="a" href='https://p7.hiclipart.com/preview/405/543/746/dio-brando-internet-meme-know-your-meme-rage-comic-jojo-s-bizarre-adventure-others.jpg'>
                   Dio</List.Item>
-                <List.Item as="a" href = 'https://www.trifenix.io'>Contact Us</List.Item>
+                <List.Item as="a" href='https://www.trifenix.io'>Contact Us</List.Item>
                 <List.Item as="a" >+56952984672</List.Item>
               </List>
             </Grid.Column>

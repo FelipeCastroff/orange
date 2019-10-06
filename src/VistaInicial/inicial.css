@@ -1,0 +1,7 @@
+.sombra{
+    box-sizing: border-box;
+    border-radius: .4rem;
+    overflow: hidden;
+    transform: translateY(-.5%);
+    box-shadow: 0 4rem 8rem rgba(0, 0, 0, .2);
+}
