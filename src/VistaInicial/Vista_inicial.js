@@ -16,11 +16,11 @@ import {
   Visibility,
   Card
 } from "semantic-ui-react";
-import Imagen1 from '../Imagenes/Imagen1.png';
-import VozTexto from '../Imagenes/speech-text.png';
-import TextoVoz from '../Imagenes/text-to-speech.png';
-import TextoTra from '../Imagenes/speech-translation.png';
-import './inicial.css';
+import Imagen1 from "../Imagenes/Imagen1.png";
+import VozTexto from "../Imagenes/speech-text.png";
+import TextoVoz from "../Imagenes/text-to-speech.png";
+import TextoTra from "../Imagenes/speech-translation.png";
+import "./inicial.css";
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
 // For more advanced usage please check Responsive docs under the "Usage" section.
@@ -35,36 +35,45 @@ const getWidth = () => {
  * such things.
  */
 const HomepageHeading = ({ mobile }) => (
-  <Container text>
-    <div className='PanelImagen'>
-      <Header
-        as="h1"
-        content="Speech Service"
-        inverted
-        style={{
-          fontSize: mobile ? "2em" : "4em",
-          fontWeight: "normal",
-          marginBottom: 0,
-          marginTop: mobile ? "1.5em" : "3em"
-        }}
-      />
-    </div>
+  <div className="Fondo_Inicial">
+    <Container>
+      <Header as="h1" style={{ margintop: "2em" }} />
+      <Container text>
+        <div className="PanelImagen">
+          <Header
+            as="h1"
+            content="Speech Service"
+            inverted
+            style={{
+              fontSize: mobile ? "2em" : "4em",
+              fontWeight: "normal",
+              marginBottom: 0,
+              marginTop: mobile ? "1.5em" : "3em"
+            }}
+          />
+        </div>
 
-    <Header
-      as="h2"
-      content="Do whatever you want when you want to."
-      inverted
-      style={{
-        fontSize: mobile ? "1.5em" : "1.7em",
-        fontWeight: "normal",
-        marginTop: mobile ? "0.5em" : "1.5em"
-      }}
-    />
-    <Button primary size="huge" href='https://www.youtube.com/watch?v=n7ovPp1RAew&feature=youtu.be'>
-      Get Started
-      <Icon name="right arrow" />
-    </Button>
-  </Container>
+        <Header
+          as="h2"
+          content="Do whatever you want when you want to."
+          inverted
+          style={{
+            fontSize: mobile ? "1.5em" : "1.7em",
+            fontWeight: "normal",
+            marginTop: mobile ? "0.5em" : "1.5em"
+          }}
+        />
+        <Button
+          primary
+          size="huge"
+          href="https://www.youtube.com/watch?v=n7ovPp1RAew&feature=youtu.be"
+        >
+          Get Started
+          <Icon name="right arrow" />
+        </Button>
+      </Container>
+    </Container>
+  </div>
 );
 
 HomepageHeading.propTypes = {
@@ -107,16 +116,16 @@ class DesktopContainer extends Component {
             >
               <Container>
                 <Menu.Item as="a" active>
-                  <a href='/' > HOME</a>
+                  <a href="/"> HOME</a>
                 </Menu.Item>
                 <Menu.Item as="a">
-                  <a href='/boton1'> BOTON 1</a>
+                  <a href="/boton1"> BOTON 1</a>
                 </Menu.Item>
                 <Menu.Item as="a">
-                  <a href='/boton2'> BOTON 2</a>
+                  <a href="/boton2"> BOTON 2</a>
                 </Menu.Item>
                 <Menu.Item as="a">
-                  <a href='/boton3'> BOTON 3 </a>
+                  <a href="/boton3"> BOTON 3 </a>
                 </Menu.Item>
                 <Menu.Item position="right">
                   <Button as="a" inverted={!fixed}>
@@ -239,56 +248,74 @@ const HomepageLayout = () => (
               ¿Qué son los servicios Voz?
             </Header>
             <p style={{ fontSize: "1.33em" }}>
-              Los servicios de voz de Azure se dividen en 3 categorías las cuales estan formadas por
-              los servicios de voz a texto, texto a voz y traducción de voz.
-              Ademas de facilitar este trabajo con el SDK de voz, el SDK de dispositivos de voz
-              o las API de Rest.
+              Los servicios de voz de Azure se dividen en 3 categorías las
+              cuales estan formadas por los servicios de voz a texto, texto a
+              voz y traducción de voz. Ademas de facilitar este trabajo con el
+              SDK de voz, el SDK de dispositivos de voz o las API de Rest.
             </p>
-
           </Grid.Column>
           <Grid.Column floated="right" width={6}>
-            <Image
-              bordered
-              rounded
-              size="medium"
-              src={Imagen1}
-            />
+            <Image bordered rounded size="medium" src={Imagen1} />
           </Grid.Column>
         </Grid.Row>
-        <Grid.Row>
-
-        </Grid.Row>
+        <Grid.Row></Grid.Row>
       </Grid>
     </Segment>
-    <Segment textAlign='center' vertical >
-      <Header  as='h2'> Estos son los servicios de voz 
-      <Header.Subheader>
-      <br></br>
-      Convierta audio en texto, traduzca voz y convierta texto en voz con los servicios de voz unificados
-    </Header.Subheader>
+    <Segment textAlign="center" vertical>
+      <Header as="h2">
+        {" "}
+        Estos son los servicios de voz
+        <Header.Subheader>
+          <br></br>
+          Convierta audio en texto, traduzca voz y convierta texto en voz con
+          los servicios de voz unificados
+        </Header.Subheader>
       </Header>
-<br></br>
+      <br></br>
       <Grid centered columns={4}>
-        <Grid.Row >
-          <Grid.Column className = 'sombra'>
-            <Image src={VozTexto} centered/>
-            <h3 > Speech to Text </h3>
-            <span> La transcripción de conversaciones captura la voz en tiempo real para que todos los participantes de la reunión puedan participar de lleno en la discusión, identificar lo que ha dicho cada uno y cuándo se ha dicho y continuar rápidamente con los pasos siguientes.</span>
+        <Grid.Row>
+          <Grid.Column className="sombra">
+            <Image src={VozTexto} centered />
+            <h3> Speech to Text </h3>
+            <span>
+              {" "}
+              La transcripción de conversaciones captura la voz en tiempo real
+              para que todos los participantes de la reunión puedan participar
+              de lleno en la discusión, identificar lo que ha dicho cada uno y
+              cuándo se ha dicho y continuar rápidamente con los pasos
+              siguientes.
+            </span>
           </Grid.Column>
-<br></br>
-<br></br>
-          <Grid.Column className='sombra'>
+          <br></br>
+          <br></br>
+          <Grid.Column className="sombra">
             <Image src={TextoVoz} centered />
-            <h3 > Text to Speech </h3>
-            <span> Compile aplicaciones y servicios que se dirijan a los usuarios de forma natural, por lo que mejorarán la accesibilidad y la usabilidad. Convierta texto en audio en tiempo casi real, reprodúzcalo y guárdelo como archivo para usarlo más adelante. Text to Speech está disponible en las versiones Neural y Standard.</span>
+            <h3> Text to Speech </h3>
+            <span>
+              {" "}
+              Compile aplicaciones y servicios que se dirijan a los usuarios de
+              forma natural, por lo que mejorarán la accesibilidad y la
+              usabilidad. Convierta texto en audio en tiempo casi real,
+              reprodúzcalo y guárdelo como archivo para usarlo más adelante.
+              Text to Speech está disponible en las versiones Neural y Standard.
+            </span>
           </Grid.Column>
-<br></br>
-<br></br>
-          <Grid.Column className='sombra'>
+          <br></br>
+          <br></br>
+          <Grid.Column className="sombra">
             <Image src={TextoTra} centered />
-            <h3 > Traducción de voz </h3>
-            <span> Incorpore a su aplicación funcionalidad de traducción de voz en tiempo real para cualquiera de los idiomas admitidos y reciba la traducción en forma de texto o de voz. Los modelos de Speech Translation se basan en tecnologías vanguardistas de reconocimiento de voz y traducción automática neuronal (NMT). Están optimizados para comprender la forma de hablar de las personas en la vida real y generar traducciones de una calidad excepcional.</span>
-
+            <h3> Traducción de voz </h3>
+            <span>
+              {" "}
+              Incorpore a su aplicación funcionalidad de traducción de voz en
+              tiempo real para cualquiera de los idiomas admitidos y reciba la
+              traducción en forma de texto o de voz. Los modelos de Speech
+              Translation se basan en tecnologías vanguardistas de
+              reconocimiento de voz y traducción automática neuronal (NMT).
+              Están optimizados para comprender la forma de hablar de las
+              personas en la vida real y generar traducciones de una calidad
+              excepcional.
+            </span>
           </Grid.Column>
         </Grid.Row>
       </Grid>
@@ -300,25 +327,51 @@ const HomepageLayout = () => (
             <Grid.Column width={3}>
               <Header inverted as="h4" content="Contactanos" />
               <List link inverted>
-                <List.Item as="a" href='https://p7.hiclipart.com/preview/405/543/746/dio-brando-internet-meme-know-your-meme-rage-comic-jojo-s-bizarre-adventure-others.jpg'>
-                  Dio</List.Item>
-                <List.Item as="a" href='https://www.trifenix.io'>Contact Us</List.Item>
-                <List.Item as="a" >+56952984672</List.Item>
+                <List.Item
+                  as="a"
+                  href="https://p7.hiclipart.com/preview/405/543/746/dio-brando-internet-meme-know-your-meme-rage-comic-jojo-s-bizarre-adventure-others.jpg"
+                >
+                  Dio
+                </List.Item>
+                <List.Item as="a" href="https://www.trifenix.io">
+                  Contact Us
+                </List.Item>
+                <List.Item as="a">+56952984672</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
               <Header inverted as="h4" content="Instagrams" />
               <List link inverted>
-                <List.Item as="a" href='https://www.instagram.com/_alondra_hg/?hl=es-la'>
-                  Sofia Gallardo</List.Item>
-                <List.Item as="a" href='https://www.instagram.com/weon.simio/?hl=es-la'>
-                  Fernando Del Pino</List.Item>
-                <List.Item as="a" href='https://www.instagram.com/ignacio_lopez_nicolas/?hl=es-la'>
-                  Ignacio Lopez</List.Item>
-                <List.Item as="a" href='https://www.instagram.com/felipe_castro.exe/?hl=es-la'>
-                  Felipe Castro</List.Item>
-                <List.Item as='a' href='https://www.instagram.com/trifenix.io/?hl=es-la'>
-                  Trifeniz.io</List.Item>
+                <List.Item
+                  as="a"
+                  href="https://www.instagram.com/_alondra_hg/?hl=es-la"
+                >
+                  Sofia Gallardo
+                </List.Item>
+                <List.Item
+                  as="a"
+                  href="https://www.instagram.com/weon.simio/?hl=es-la"
+                >
+                  Fernando Del Pino
+                </List.Item>
+                <List.Item
+                  as="a"
+                  href="https://www.instagram.com/ignacio_lopez_nicolas/?hl=es-la"
+                >
+                  Ignacio Lopez
+                </List.Item>
+                <List.Item
+                  as="a"
+                  href="https://www.instagram.com/felipe_castro.exe/?hl=es-la"
+                >
+                  Felipe Castro
+                </List.Item>
+                <List.Item
+                  as="a"
+                  href="https://www.instagram.com/trifenix.io/?hl=es-la"
+                >
+                  Trifenix.io
+                </List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
