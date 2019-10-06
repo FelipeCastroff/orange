@@ -32,7 +32,11 @@
   height: 50vh;
   background-position: top;
 }
-
+.Fondo3 {
+  background-image: url("https://66.media.tumblr.com/18007427df3a1ed5221d4b1328b2ff40/tumblr_pyyoho3lDE1ywg6aio1_1280.jpg");
+  height: 50vh;
+  background-position: top;
+}
 .Fondo_Inicial {
   background-image: url("http://eskipaper.com/images/river-wallpaper-19.jpg");
   height: 80vh;
