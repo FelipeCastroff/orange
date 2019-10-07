@@ -1,19 +1,10 @@
-<<<<<<< HEAD
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "semantic-ui-css/semantic.min.css";
-=======
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import 'semantic-ui-css/semantic.min.css';
 import "animate.css/animate.min.css";
->>>>>>> 53bf99382028aacad72564a068267f267e20100b
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

@@ -37,12 +37,8 @@
   height: 50vh;
   background-position: top;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 53bf99382028aacad72564a068267f267e20100b
 .Fondo_Inicial {
-  background-image: url("http://eskipaper.com/images/river-wallpaper-19.jpg");
+  background-image: url("https://images.unsplash.com/photo-1505807557511-bc38492556a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80");
   height: 80vh;
   background-position: center;
 }
