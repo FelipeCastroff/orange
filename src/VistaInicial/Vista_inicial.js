@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import {
   Button,
   Container,
-  Divider,
   Grid,
   Header,
   Icon,
@@ -13,14 +12,21 @@ import {
   Responsive,
   Segment,
   Sidebar,
-  Visibility,
-  Card
+  Visibility
 } from "semantic-ui-react";
-import Imagen1 from "../Imagenes/Imagen1.png";
-import VozTexto from "../Imagenes/speech-text.png";
-import TextoVoz from "../Imagenes/text-to-speech.png";
-import TextoTra from "../Imagenes/speech-translation.png";
-import "./inicial.css";
+import ScrollAnimation from 'react-animate-on-scroll';
+
+import Imagen1 from '../Imagenes/Imagen1.png';
+import VozTexto from '../Imagenes/speech-text.png';
+import TextoVoz from '../Imagenes/text-to-speech.png';
+import TextoTra from '../Imagenes/speech-translation.png';
+
+import Java from './java.png';
+import Python from './python.png';
+import Net from './net.png';
+
+import './inicial.css';
+import '../App.css';
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
 // For more advanced usage please check Responsive docs under the "Usage" section.
@@ -55,7 +61,7 @@ const HomepageHeading = ({ mobile }) => (
 
         <Header
           as="h2"
-          content="Do whatever you want when you want to."
+          content="Convierta audio en texto, traduzca voz y convierta texto en voz con los servicios de voz unificados"
           inverted
           style={{
             fontSize: mobile ? "1.5em" : "1.7em",
@@ -261,64 +267,116 @@ const HomepageLayout = () => (
         <Grid.Row></Grid.Row>
       </Grid>
     </Segment>
-    <Segment textAlign="center" vertical>
-      <Header as="h2">
-        {" "}
-        Estos son los servicios de voz
-        <Header.Subheader>
-          <br></br>
-          Convierta audio en texto, traduzca voz y convierta texto en voz con
-          los servicios de voz unificados
+    <Segment textAlign='center' basic >
+      <ScrollAnimation animateIn='fadeIn'>
+        <Header as='h2'> Estos son los servicios de voz
+        <Header.Subheader >
+            <br></br>
+            Convierta audio en texto, traduzca voz y convierta texto en voz con los servicios de voz unificados
         </Header.Subheader>
-      </Header>
+        </Header>
+        <br></br>
+      </ScrollAnimation>
+
+      <ScrollAnimation animateIn='bounceInRight'>
+        <Grid centered columns={4} >
+          <Grid.Row >
+            <Grid.Column >
+              <Image src={VozTexto} centered />
+            </Grid.Column>
+            <Grid.Column >
+              <Image src={TextoVoz} centered />
+            </Grid.Column>
+            <Grid.Column >
+              <Image src={TextoTra} centered />
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row>
+            <Grid.Column>
+              <h3 > Speech to Text </h3>
+            </Grid.Column>
+            <Grid.Column>
+              <h3 > Text to Speech </h3>
+            </Grid.Column>
+            <Grid.Column>
+              <h3 > Traducción de voz </h3>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row>
+            <Grid.Column>
+              <span> La transcripción de conversaciones captura la voz en tiempo real para que todos los participantes de la reunión puedan participar de lleno en la discusión, identificar lo que ha dicho cada uno y cuándo se ha dicho y continuar rápidamente con los pasos siguientes.</span>
+            </Grid.Column>
+            <Grid.Column>
+              <span> Compile aplicaciones y servicios que se dirijan a los usuarios de forma natural, por lo que mejorarán la accesibilidad y la usabilidad. Convierta texto en audio en tiempo casi real, reprodúzcalo y guárdelo como archivo para usarlo más adelante. Text to Speech está disponible en las versiones Neural y Standard.</span>
+            </Grid.Column>
+            <Grid.Column>
+              <span> Incorpore a su aplicación funcionalidad de traducción de voz en tiempo real para cualquiera de los idiomas admitidos y reciba la traducción en forma de texto o de voz. Los modelos de Speech Translation se basan en tecnologías vanguardistas de reconocimiento de voz y traducción automática neuronal (NMT). Están optimizados para comprender la forma de hablar de las personas en la vida real y generar traducciones de una calidad excepcional.</span>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </ScrollAnimation>
+
       <br></br>
-      <Grid centered columns={4}>
-        <Grid.Row>
-          <Grid.Column className="sombra">
-            <Image src={VozTexto} centered />
-            <h3> Speech to Text </h3>
-            <span>
-              {" "}
-              La transcripción de conversaciones captura la voz en tiempo real
-              para que todos los participantes de la reunión puedan participar
-              de lleno en la discusión, identificar lo que ha dicho cada uno y
-              cuándo se ha dicho y continuar rápidamente con los pasos
-              siguientes.
-            </span>
-          </Grid.Column>
-          <br></br>
-          <br></br>
-          <Grid.Column className="sombra">
-            <Image src={TextoVoz} centered />
-            <h3> Text to Speech </h3>
-            <span>
-              {" "}
-              Compile aplicaciones y servicios que se dirijan a los usuarios de
-              forma natural, por lo que mejorarán la accesibilidad y la
-              usabilidad. Convierta texto en audio en tiempo casi real,
-              reprodúzcalo y guárdelo como archivo para usarlo más adelante.
-              Text to Speech está disponible en las versiones Neural y Standard.
-            </span>
-          </Grid.Column>
-          <br></br>
-          <br></br>
-          <Grid.Column className="sombra">
-            <Image src={TextoTra} centered />
-            <h3> Traducción de voz </h3>
-            <span>
-              {" "}
-              Incorpore a su aplicación funcionalidad de traducción de voz en
-              tiempo real para cualquiera de los idiomas admitidos y reciba la
-              traducción en forma de texto o de voz. Los modelos de Speech
-              Translation se basan en tecnologías vanguardistas de
-              reconocimiento de voz y traducción automática neuronal (NMT).
-              Están optimizados para comprender la forma de hablar de las
-              personas en la vida real y generar traducciones de una calidad
-              excepcional.
-            </span>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
+    </Segment>
+
+    <Segment textAlign='center' basic>
+      <ScrollAnimation animateIn='fadeIn'>
+        <Header as='h2'> Desarrollo de aplicaciones
+        <Header.Subheader>
+            <br></br>
+            Desarrolle aplicaciones en estos 3 principales lenguajes
+        </Header.Subheader>
+        </Header> <br></br>
+      </ScrollAnimation>
+
+      <ScrollAnimation animateIn='bounceInLeft'>
+        <Grid centered columns={4} >
+          <Grid.Row>
+            <Grid.Column >
+              <Image
+                src={Net} centered
+              />
+            </Grid.Column>
+            <Grid.Column>
+              <Image
+                src={Python} centered size='small'
+              />
+            </Grid.Column>
+            <Grid.Column>
+              <Image
+                src={Java} centered size='small'
+              />
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row>
+            <Grid.Column>
+              <h3 > .NET </h3>
+            </Grid.Column>
+            <Grid.Column>
+              <h3 > Python </h3>
+            </Grid.Column>
+            <Grid.Column>
+              <h3 > Java </h3>
+            </Grid.Column>
+          </Grid.Row>
+
+          <Grid.Row>
+            <Grid.Column>
+              <span> Aprenda a compilar aplicaciones de .NET y .NET Core con los servicios de Azure y C#.</span>
+            </Grid.Column>
+            <Grid.Column>
+              <span> Las bibliotecas de Azure para Python le permiten usar los servicios de Azure y administrar los recursos de Azure desde el código de su aplicación.</span>
+            </Grid.Column>
+            <Grid.Column>
+              <span> App Service en Linux proporciona un servicio de alojamiento web altamente escalable y auto-parcheado que utiliza el sistema operativo Linux. Este inicio rápido muestra cómo usar la CLI de Azure con el complemento de Maven para Azure App Service para implementar un archivo Java web archive (WAR) en el sistema operativo Linux.</span>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </ScrollAnimation>
+
     </Segment>
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
       <Container>

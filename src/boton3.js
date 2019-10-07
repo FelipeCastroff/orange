@@ -106,6 +106,7 @@ class DesktopContainer extends Component {
               size="large"
             >
               <Container>
+<<<<<<< HEAD
                 <Menu.Item
                   as="a" /*Ojo con esto en el boton1 onClick={this.toggleShow}*/
                 >
@@ -119,6 +120,19 @@ class DesktopContainer extends Component {
                 </Menu.Item>
                 <Menu.Item as="a" active>
                   <a href="/boton3"> BOTON 3</a>
+=======
+                <Menu.Item as="a" /*Ojo con esto en el boton1 onClick={this.toggleShow}*/>
+                  <a href='/'>HOME</a>
+                </Menu.Item>
+                <Menu.Item as="a">
+                  <a href='/boton1'> BOTON 1</a>
+                </Menu.Item>
+                <Menu.Item as="a">
+                  <a href='/boton2'> BOTON 2</a>
+                </Menu.Item>
+                <Menu.Item as="a" active>
+                  <a href='/boton3' > BOTON 3</a>
+>>>>>>> 53bf99382028aacad72564a068267f267e20100b
                 </Menu.Item>
                 <Menu.Item position="right">
                   <Button as="a" inverted={!fixed}>
@@ -156,6 +170,10 @@ class MobileContainer extends Component {
 
   handleToggle = () => this.setState({ sidebarOpened: true });
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 53bf99382028aacad72564a068267f267e20100b
   render() {
     const { children } = this.props;
     const { sidebarOpened } = this.state;
@@ -232,8 +250,12 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
+<<<<<<< HEAD
     <Segment style={{ padding: "8em 0em" }} vertical>
       {/*De aquí para abajo es la aprte de abajo*/}
+=======
+    <Segment style={{ padding: "8em 0em" }} vertical>{/*De aquí para abajo es la aprte de abajo*/}
+>>>>>>> 53bf99382028aacad72564a068267f267e20100b
     </Segment>
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
       <Container>
