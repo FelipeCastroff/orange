@@ -20,7 +20,7 @@ import styled from "styled-components";
 import ReactPlayer from "react-player";
 import Vista_inicial from "../src/VistaInicial/Vista_inicial";
 import SpotifyPlayer from "react-spotify-player";
-import Boton1Alt from "./boton1Alt";
+import Boton1 from "./boton1";
 
 export const Input = styled.input`
   border: 1px solid #333;
@@ -43,7 +43,7 @@ const getWidth = () => {
  */
 
 const HomepageHeading = ({ mobile }) => (
-  <div className="Fondo1">
+  <div className="Fondo2">
     <Container>
       <Header as="h1" style={{ margintop: "1em" }} />
       <Header
@@ -143,12 +143,12 @@ class DesktopContainer extends Component {
                     </Button>
                     <Button
                       as="a"
-                      inverted={!fixed}
-                      onClick={this.toggleShow}
+                      active
                       primary={fixed}
                       style={{ marginLeft: "0.5em" }}
+                      onClick={this.toggleShow}
                     >
-                      Cambio fondo
+                      Regresar estilo original
                     </Button>
                   </Menu.Item>
                 </Container>
@@ -161,7 +161,7 @@ class DesktopContainer extends Component {
         </Responsive>
       );
     } else {
-      return <Boton1Alt></Boton1Alt>;
+      return <Boton1></Boton1>;
     }
   }
 }
@@ -381,10 +381,10 @@ const HomepageLayout = () => (
           <Grid.Column floated="right" width={7}>
             <div class="c">
               <div class="i">
-                <a href="https://youtu.be/7ecYoSvGO60?t=11">
+                <a href="https://www.youtube.com/watch?v=s-yVQzCCRMs">
                   <img
                     class="img"
-                    src="https://www.exomundos.com/wp-content/uploads/2017/09/rick-morty-670x335.jpg"
+                    src="https://66.media.tumblr.com/1626aeafe407c94627a05a79024c4f36/tumblr_pz0uk3ioYZ1ywg6aio1_1280.jpg"
                   />
                 </a>
               </div>
@@ -504,7 +504,7 @@ const HomepageLayout = () => (
               "Youtube"
             </Header>
             <ReactPlayer
-              url="https://youtu.be/p00v9ZFhWJM?t=13"
+              url="https://www.youtube.com/watch?v=Gs069dndIYk"
               className="react-player"
               playing
               width="480px"
