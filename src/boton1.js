@@ -13,10 +13,20 @@ import {
   Responsive,
   Segment,
   Sidebar,
-  Visibility
+  Visibility,
+  Table
 } from "semantic-ui-react";
+import styled from "styled-components";
+import ReactPlayer from "react-player";
 import Vista_inicial from "../src/VistaInicial/Vista_inicial";
+import SpotifyPlayer from "react-spotify-player";
 
+export const Input = styled.input`
+  border: 1px solid #333;
+  font-size: 30px;
+  height: 50px;
+  width: ${props => (props.fullWidth ? "100%" : "500px")};
+`;
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
 // For more advanced usage please check Responsive docs under the "Usage" section.
@@ -37,7 +47,7 @@ const HomepageHeading = ({ mobile }) => (
       <Header as="h1" style={{ margintop: "1em" }} />
       <Header
         as="h1"
-        content="JOJO"
+        content="Documentacion y Detalles"
         inverted
         style={{
           fontSize: mobile ? "2em" : "4em",
@@ -48,22 +58,14 @@ const HomepageHeading = ({ mobile }) => (
       />
       <Header
         as="h2"
-        content=" 'Kono Dio Da'"
+        content="Speech Services esta disponible para su desarrollo en diversos lenguajes"
         inverted
         style={{
-          fontSize: mobile ? "1em" : "1em",
+          fontSize: mobile ? "2em" : "2em",
           fontWeight: "normal",
           marginTop: mobile ? "0em" : "1em"
         }}
       />
-      <Button
-        primary
-        size="huge"
-        href="https://www.crunchyroll.com/es/jojos-bizarre-adventure/episode-1-dio-the-invader-652081"
-      >
-        Vamos a ver monitos Chinos.
-        <Icon name="right arrow" />
-      </Button>
     </Container>
   </div>
 );
@@ -232,38 +234,189 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
+    <Segment style={{ padding: "2em" }} vertical>
+      <Grid celled="internally" columns="3" stackable>
+        <Grid.Row textAlign="center">
+          <Grid.Column
+            style={{
+              paddingBottom: "2em",
+              paddingTop: "2em",
+              paddingLeft: "5em"
+            }}
+          >
+            <Header as="h3" style={{ fontSize: "2em" }}>
+              "SpotifyPlayer"
+            </Header>
+            <SpotifyPlayer
+              textAlign="center"
+              uri="spotify:playlist:2MR1jTLD2pWNKNNEfZc8Hr"
+              size="large"
+              view="list"
+              theme="black"
+              playing
+            />
+          </Grid.Column>
+          <Grid.Column style={{ paddingBottom: "1em", paddingTop: "1em" }}>
+            <Header as="h3" style={{ fontSize: "2em" }}>
+              "Twitch"
+            </Header>
+            <ReactPlayer
+              url="https://www.twitch.tv/sclan2k19"
+              className="react-player"
+              playing
+              volume="0"
+              width="480px"
+              height="270px"
+            ></ReactPlayer>
+          </Grid.Column>
+          <Grid.Column style={{ paddingBottom: "1em", paddingTop: "1em" }}>
+            <Header as="h3" style={{ fontSize: "2em" }}>
+              "Soundcloud"
+            </Header>
+            <ReactPlayer
+              url="https://soundcloud.com/laurent-decarvin/bag-raiders-shooting-stars"
+              className="react-player"
+              playing
+              width="480px"
+              height="270px"
+            ></ReactPlayer>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+    </Segment>
     <Segment style={{ padding: "8em 0em" }} vertical>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column width={8}>
             <Header as="h3" style={{ fontSize: "2em" }}>
-              The Crusaders needs you!
+              ¡Puede Aprender a usar el SDK en solo 5 minutos!
             </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              After all this time Dio has returned again, and now with new
-              powers, this is why the Crusaders have come together to end the
-              evil that is from their roots, join the Crusaders on their trip to
-              Egypt to face Dio's world
-            </p>
+            <Table className="dataMatrix">
+              <tbody>
+                <tr>
+                  <th></th>
+                  <th>
+                    <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/quickstart-csharp-dotnet-windows">
+                      <img
+                        alt="column 1"
+                        src="https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/media/index/logo_csharp.svg"
+                        width="48px"
+                        data-linktype="relative-path"
+                      />
+                    </a>
+                  </th>
+                  <th>
+                    <a href="https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/quickstart-csharp-dotnet-windows">
+                      <img
+                        alt="column 2"
+                        src="https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/media/index/logo_netcore.svg"
+                        width="48px"
+                        data-linktype="relative-path"
+                      />
+                    </a>
+                  </th>
+                  <th>
+                    <a href="https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/quickstart-csharp-unity">
+                      <img
+                        alt="column 3"
+                        src="https://docs.microsoft.com/en-us/media/logos/logo_unity.svg"
+                        width="48px"
+                        data-linktype="relative-path"
+                      />
+                    </a>
+                  </th>
+                  <th>
+                    <a href="https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/quickstart-python">
+                      <img
+                        alt="column 4"
+                        src="https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/media/index/logo_python.svg"
+                        width="48px"
+                        data-linktype="relative-path"
+                      />
+                    </a>
+                  </th>
+                  <th>
+                    <a href="https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/quickstart-js-node">
+                      <img
+                        alt="column 5"
+                        src="https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/media/index/logo_nodejs.svg"
+                        width="48px"
+                        data-linktype="relative-path"
+                      />
+                    </a>
+                  </th>
+                  <th>
+                    <a href="https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/quickstart-js-browser">
+                      <img
+                        alt="column 6"
+                        src="https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/media/index/logo_js.svg"
+                        width="48px"
+                        data-linktype="relative-path"
+                      />
+                    </a>
+                  </th>
+                </tr>
+              </tbody>
+            </Table>
             <Header as="h3" style={{ fontSize: "2em" }}>
-              Meet Jotaro!
+              Speech Service permite:
+            </Header>
+            <Container className="punto">
+              <tr style={{ fontSize: "1.33em" }}>&bull; Texto a voz</tr>
+              <tr style={{ fontSize: "1.33em" }}>
+                &bull; Palabras de activacion personalizadas
+              </tr>
+              <tr style={{ fontSize: "1.33em" }}>&bull; Traduccion</tr>
+              <tr style={{ fontSize: "1.33em" }}>
+                &bull; Transcripcion de Conversaciones
+              </tr>
+              <tr style={{ fontSize: "1.33em" }}>
+                &bull; Asistente Virtual por Voz
+              </tr>
+              <tr style={{ fontSize: "1.33em" }}>
+                &bull; Personalizacion Listas de Frases
+              </tr>
+            </Container>
+            <Header as="h4" style={{ fontSize: "2em" }}>
+              Conversion Voz a Texto
             </Header>
             <p style={{ fontSize: "1.33em" }}>
-              Yes that's right, Jotaro is the new jojo of this season, which is
-              our hero on duty to face Dio
+              La conversión de voz a texto de Servicios de voz de Azure, también
+              conocida simplemente como voz a texto, permite la transcripción en
+              tiempo real de secuencias de audio a texto que las aplicaciones,
+              herramientas o dispositivos pueden usar, mostrar o actuar como
+              ante una entrada de comandos. Este servicio funciona con la misma
+              tecnología de reconocimiento que Microsoft utiliza para los
+              productos de Cortana y Office, y funciona sin problemas con la
+              traducción y el servicio de texto a voz.
             </p>
             <Header as="h4" style={{ fontSize: "2em" }}>
-              Cagamos
+              Personalización
             </Header>
             <p style={{ fontSize: "1.33em" }}>
-              Despues de todo este tiempo esta temporada va a estar de la
-              bastarda.
+              Además del modelo de línea de base estándar usado por Servicios de
+              voz, puede personalizar modelos para sus necesidades con los datos
+              disponibles para superar barreras de reconocimiento de voz tales
+              como el estilo de habla, el vocabulario y el ruido de fondo. Puede
+              consultar todo esto en{" "}
+              <a
+                href="https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/how-to-custom-speech"
+                data-linktype="relative-path"
+              >
+                Custom Speech
+              </a>
+              .
             </p>
-          </Grid.Column>{" "}
+          </Grid.Column>
           <Grid.Column floated="right" width={7}>
             <div class="c">
               <div class="i">
-                <img class="img" src="https://i.imgur.com/jLEfHF1.png" />
+                <a href="https://youtu.be/7ecYoSvGO60?t=11">
+                  <img
+                    class="img"
+                    src="https://www.exomundos.com/wp-content/uploads/2017/09/rick-morty-670x335.jpg"
+                  />
+                </a>
               </div>
               <div class="s1"></div>
               <div class="s2"></div>
@@ -276,35 +429,39 @@ const HomepageLayout = () => (
             <Button
               primary
               size="huge"
-              href="https://www.crunchyroll.com/es/jojos-bizarre-adventure/episode-1-the-man-possessed-by-an-evil-spirit-652155"
+              href="https://azure.microsoft.com/es-es/services/cognitive-services/speech-services/"
             >
-              Go to Stardust Crusaders!
+              Mas sobre Speech Services
             </Button>
           </Grid.Column>
         </Grid.Row>
       </Grid>
     </Segment>
-    <Segment style={{ padding: "0em" }} vertical>
-      <Grid celled="internally" columns="equal" stackable>
+    <Segment style={{ padding: "2em" }} vertical>
+      <Grid celled="internally" columns="2" stackable>
         <Grid.Row textAlign="center">
-          <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
+          <Grid.Column
+            style={{
+              paddingBottom: "4em",
+              paddingTop: "5em",
+              paddingLeft: "10em"
+            }}
+          >
             <Header as="h3" style={{ fontSize: "2em" }}>
-              "What a Company"
+              "Escenarios empresariales basados en servicios de voz"
             </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              That is what they all say about us
+            <p style={{ fontSize: "1.5em" }}>
+              Transcriba fácilmente las llamadas y optimice los resultados con
+              servicios de transcripción por lotes y de voz personalizada
+              mejorados para centros de llamadas.
             </p>
           </Grid.Column>
-          <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              "I shouldn't have gone with their competitor."
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>
+          <Grid.Column style={{ paddingBottom: "1em", paddingTop: "1em" }}>
+            <p style={{ fontSize: "9em" }}>
               <Image
                 avatar
-                src="https://fsmedia.imgix.net/79/fe/e8/24/2647/4c79/89d9/3c75e1ecf00c/shrek-2jpg.jpeg?auto=compress&h=1200&w=1200&crop=edges&fit=crop"
+                src="https://azurecomcdn.azureedge.net/cvt-add6f4a23186e176ede2ce0357a4c26bb9352332c93c37a18e80bd3245a301b9/images/page/services/cognitive-services/speech-services/speech-category.svg"
               />
-              <b>Nan</b> Chief Fun Officer Acme Toys
             </p>
           </Grid.Column>
         </Grid.Row>
@@ -312,18 +469,16 @@ const HomepageLayout = () => (
     </Segment>
     <Segment style={{ padding: "8em 0em" }} vertical>
       <Container text>
-        <Header as="h3" style={{ fontSize: "2em" }}>
-          Breaking The Grid, Grabs Your Attention
+        <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
+          Azure Speech Service
         </Header>
-        <p style={{ fontSize: "1.33em" }}>
-          Instead of focusing on content creation and hard work, we have learned
-          how to master the art of doing nothing by providing massive amounts of
-          whitespace and generic content that can seem massive, monolithic and
-          worth your attention.
-        </p>
-        <Button as="a" size="large">
-          Read More
-        </Button>
+        <ReactPlayer
+          url="https://www.youtube.com/watch?v=EYinMnQWgfU"
+          className="react-player"
+          width="720px"
+          height="480px"
+          playsinline
+        ></ReactPlayer>
         <Divider
           as="h4"
           className="header"
@@ -333,20 +488,24 @@ const HomepageLayout = () => (
           <a href="#">Case Studies</a>
         </Divider>
         <Header as="h3" style={{ fontSize: "2em" }}>
-          Did We Tell You About Our Bananas?
+          Les comentamos que esta seccion...
         </Header>
         <p style={{ fontSize: "1.33em" }}>
-          Yes I know you probably disregarded the earlier boasts as non-sequitur
-          filler content, but it's really true. It took years of gene splicing
-          and combinatory DNA research, but our bananas can really dance.
+          ...Esta seccion no busca explicar nada necesariamente concreto pero si
+          bastante necesario en algunos ambitos de dudosa procedencia, siendo un
+          caso bastante concreto el cuestionamiento que engendra en la mente del
+          lector a la hora de buscar cierto sentido a las palabras colocadas en
+          esta seccion sin cubrir un espectro de atencion lo suficientemente
+          alto como para dejar de lado la tarea de terminar de leer este parrafo
+          para saber como concluira pero siempre sabiendo que todo se acabara
+          con un punto Final.
         </p>
-        <Button as="a" size="large">
-          I'm Still Quite Interested
-        </Button>
+
+        <Input placeholder="Escriba Comentarios(no enviables)"></Input>
       </Container>
     </Segment>
     <Segment style={{ padding: "8em 0em" }} vertical>
-      {/*De aquí para abajo es la aprte de abajo*/}
+      {/*Footer de la Pagina*/}
     </Segment>
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
       <Container>
@@ -398,7 +557,7 @@ const HomepageLayout = () => (
                   as="a"
                   href="https://www.instagram.com/trifenix.io/?hl=es-la"
                 >
-                  Trifeniz.io
+                  Trifenix.io
                 </List.Item>
               </List>
             </Grid.Column>
