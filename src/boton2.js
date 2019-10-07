@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import React, { Component } from "react";
+import ScrollAnimation from "react-animate-on-scroll";
 import {
   Button,
   Container,
@@ -13,7 +14,8 @@ import {
   Responsive,
   Segment,
   Sidebar,
-  Visibility
+  Visibility,
+  GridColumn
 } from "semantic-ui-react";
 import Vista_inicial from "../src/VistaInicial/Vista_inicial";
 
@@ -37,7 +39,7 @@ const HomepageHeading = ({ mobile }) => (
       <Header as="h1" style={{ margintop: "1em" }} />
       <Header
         as="h1"
-        content="JOJO"
+        content="Speech Devices SDK"
         inverted
         style={{
           fontSize: mobile ? "2em" : "4em",
@@ -46,24 +48,7 @@ const HomepageHeading = ({ mobile }) => (
           marginTop: mobile ? "1em" : "2em"
         }}
       />
-      <Header
-        as="h2"
-        content=" 'Kono Dio Da'"
-        inverted
-        style={{
-          fontSize: mobile ? "1em" : "1em",
-          fontWeight: "normal",
-          marginTop: mobile ? "0em" : "1em"
-        }}
-      />
-      <Button
-        primary
-        size="huge"
-        href="https://www.crunchyroll.com/es/jojos-bizarre-adventure/episode-1-dio-the-invader-652081"
-      >
-        Vamos a ver monitos Chinos.
-        <Icon name="right arrow" />
-      </Button>
+      
     </Container>
   </div>
 );
@@ -114,7 +99,7 @@ class DesktopContainer extends Component {
                   <a href="/boton1"> BOTON 1 </a>
                 </Menu.Item>
                 <Menu.Item as="a" active>
-                  <a href="/boton2"> BOTON 2</a>
+                  <a href="/boton2"> Speech Devices SDK</a>
                 </Menu.Item>
                 <Menu.Item as="a">
                   <a href="/boton3"> BOTON 3 </a>
@@ -232,122 +217,222 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
-    <Segment style={{ padding: "8em 0em" }} vertical>
-      <Grid container stackable verticalAlign="middle">
+    <Segment basic  vertical>
+    <Divider
+          as="h4"
+          className="header"
+          horizontal
+          style={{ margin: "5em 0em", textTransform: "uppercase" }}
+        >
+          <a >conceptos clave</a>
+    </Divider>
+    <ScrollAnimation animateIn="fadeIn" >
+      <Grid container stackable >
         <Grid.Row>
-          <Grid.Column width={8}>
+        
+          <Grid.Column width={8} verticalAlign="top">
             <Header as="h3" style={{ fontSize: "2em" }}>
-              The Crusaders needs you!
+              ¿Que son los Speech Devices?
             </Header>
             <p style={{ fontSize: "1.33em" }}>
-              After all this time Dio has returned again, and now with new
-              powers, this is why the Crusaders have come together to end the
-              evil that is from their roots, join the Crusaders on their trip to
-              Egypt to face Dio's world
+              Speech Devices SDK es una biblioteca preajustada que se 
+              combina con kits de desarrollo de matriz de micrófono especialmente diseñados.
+              Funcionan con una amplia variedad de dispositivos y fuentes de audio,
+              puede llevar sus aplicaciones de voz 
+              al siguiente nivel con hardware y software compatibles
             </p>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              Meet Jotaro!
-            </Header>
             <p style={{ fontSize: "1.33em" }}>
-              Yes that's right, Jotaro is the new jojo of this season, which is
-              our hero on duty to face Dio
+              Speech Devices SDK emplea  Speech SDK para enviar el audio procesado por un algoritmo 
+              avanzado de procesamiento de audio desde la matriz de micrófonos 
+              del dispositivo a los Servicios de voz que son  los tres nombrados anteriormente.
             </p>
-            <Header as="h4" style={{ fontSize: "2em" }}>
-              Cagamos
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              Despues de todo este tiempo esta temporada va a estar de la
-              bastarda.
-            </p>
+
+    
           </Grid.Column>{" "}
-          <Grid.Column floated="right" width={7}>
+          <Grid.Column verticalAlign= "middle" floated="right" width={7} >
             <div class="c">
               <div class="i">
-                <img class="img" src="https://i.imgur.com/jLEfHF1.png" />
+                <img class="img" src="https://dv-website.s3.amazonaws.com/uploads/2015/09/Voice-Processing.jpg" />
               </div>
               <div class="s1"></div>
               <div class="s2"></div>
               <div class="s3"></div>
+              
             </div>
           </Grid.Column>
-        </Grid.Row>
-        <Grid.Row>
-          <Grid.Column textAlign="center">
-            <Button
-              primary
-              size="huge"
-              href="https://www.crunchyroll.com/es/jojos-bizarre-adventure/episode-1-the-man-possessed-by-an-evil-spirit-652155"
-            >
-              Go to Stardust Crusaders!
-            </Button>
+          <Grid.Column floated= "left" width={7} style={{ margin: "8em 0em" }} >
+            <div>
+              <div >
+                <img  src = "https://docs.microsoft.com/es-es/azure/media/index/api_bing_speech.svg" height="400" width="400" />
+              </div>
+
+              
+            </div>
           </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
-    <Segment style={{ padding: "0em" }} vertical>
-      <Grid celled="internally" columns="equal" stackable>
-        <Grid.Row textAlign="center">
-          <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              "What a Company"
+          <Grid.Column width={7} floated="right" verticalAlign= "middle">
+            <Header as="h3" style={{ fontSize: "2em" } }>
+              ¿Que es el Speech SDK?
             </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              That is what they all say about us
-            </p>
+              <p style={{ fontSize: "1.33em" }}>
+                Speech SDK es un kit de desarrollo de software (SDK) que proporciona  aplicaciones de
+                acceso a las funciones del servicio Voz, lo que facilita el desarrollo de software 
+                habilitado para la voz. Actualmente, los SDK proporcionan acceso a voz a 
+                texto, texto a voz, traducción de voz ,entre otras.
+              </p>
           </Grid.Column>
-          <Grid.Column style={{ paddingBottom: "5em", paddingTop: "5em" }}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              "I shouldn't have gone with their competitor."
-            </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              <Image
-                avatar
-                src="https://fsmedia.imgix.net/79/fe/e8/24/2647/4c79/89d9/3c75e1ecf00c/shrek-2jpg.jpeg?auto=compress&h=1200&w=1200&crop=edges&fit=crop"
-              />
-              <b>Nan</b> Chief Fun Officer Acme Toys
-            </p>
-          </Grid.Column>
+
         </Grid.Row>
+       
+       
       </Grid>
+    </ScrollAnimation>
+
     </Segment>
-    <Segment style={{ padding: "8em 0em" }} vertical>
-      <Container text>
-        <Header as="h3" style={{ fontSize: "2em" }}>
-          Breaking The Grid, Grabs Your Attention
-        </Header>
-        <p style={{ fontSize: "1.33em" }}>
-          Instead of focusing on content creation and hard work, we have learned
-          how to master the art of doing nothing by providing massive amounts of
-          whitespace and generic content that can seem massive, monolithic and
-          worth your attention.
-        </p>
-        <Button as="a" size="large">
-          Read More
-        </Button>
+    <Segment basic style={{ padding: "0em" }} vertical>
         <Divider
           as="h4"
           className="header"
           horizontal
-          style={{ margin: "3em 0em", textTransform: "uppercase" }}
-        >
-          <a href="#">Case Studies</a>
+          style={{ margin: "2em 0em", textTransform: "uppercase" }}>
+          <a >Tipos de servicios de voz</a>
         </Divider>
-        <Header as="h3" style={{ fontSize: "2em" }}>
-          Did We Tell You About Our Bananas?
-        </Header>
-        <p style={{ fontSize: "1.33em" }}>
-          Yes I know you probably disregarded the earlier boasts as non-sequitur
-          filler content, but it's really true. It took years of gene splicing
-          and combinatory DNA research, but our bananas can really dance.
-        </p>
-        <Button as="a" size="large">
-          I'm Still Quite Interested
-        </Button>
-      </Container>
+        <ScrollAnimation animateIn="fadeIn">
+        <Grid container columns={2} >
+          <Grid.Column verticalAlign="middle">
+              <Header as="h3" style={{ fontSize: "2em " } }>
+                Servicio Texto a Voz
+              </Header>
+              <p style={{ fontSize: "1.33em" }}>
+                La opción de texto a voz de los servicios de voz de Azure es un servicio que 
+                permite que sus aplicaciones, herramientas o dispositivos conviertan el texto 
+                en una voz sintetizada natural similar a la humana. Puede elegir entre voces estándar 
+                y neuronales, o puede crear su propia voz personalizada única para su producto o marca. 
+                Tiene más de 75 voces estándar disponibles en más de 45 idiomas y configuraciones regionales
+                y 5 voces neuronales que están disponibles en 4 idiomas y configuraciones regionales
+              </p>
+
+          </Grid.Column>
+
+          <Grid.Column width={8} floated="right" >
+              <div >
+                <img  size = "small" src= "https://addons.cdn.mozilla.net/user-media/previews/thumbs/219/219717.png?modified=1558605872" />
+              </div>
+          </Grid.Column>
+              
+              
+              <Grid style={{ margin: "0em 0em" }}>
+                <header as = "h6" style = {{ fontSize: "2em" ,margin: "1em 0em"}}>voces del servicio</header>
+
+                <p style={{ fontSize: "1.33em" }}> Las voces estándar se crean mediante técnicas de Síntesis paramétrica 
+                    estadística y de Síntesis de concatenación. Estas voces son realmente inteligibles y suenan muy 
+                    naturales. Puede habilitar fácilmente sus aplicaciones para que hablen en más de 45 idiomas, 
+                    con una amplia gama de opciones de voz. Estas voces proporcionan una alta precisión de 
+                    pronunciación, admiten abreviaturas, expanden acrónimos, interpretan la fecha y la hora, son
+                    polifónicas y ofrecen muchas cosas más. Use la voz estándar para mejorar la
+                    accesibilidad de sus aplicaciones y servicios al permitir que los usuarios}
+                    interactúen con su contenido de manera audible.
+                </p>
+               <p style={{ fontSize: "1.33em" }}>
+                    Las voces neuronales usan redes neuronales profundas para superar los límites de los sistemas
+                    tradicionales de texto a voz y así poder hacer coincidir los patrones de acentuación y 
+                    entonación en el lenguaje hablado y sintetizar las unidades del habla en una voz del equipo. 
+                    La conversión de texto a voz estándar divide la prosodia en análisis lingüísticos separados 
+                    y pasos de predicción acústica que se rigen por modelos independientes, lo que puede resultar
+                    en una síntesis de voz que se oye amortiguada. La capacidad neuronal se encarga de la 
+                    predicción de la prosodia y la síntesis de voz simultáneamente, lo que resulta en una voz más 
+                    fluida y natural.
+                </p>
+                <p style={{ fontSize: "1.33em" }}>
+                    La personalización de la voz le permite crear una voz reconocible y única para su marca.
+                    Para crear su fuente de voz, haga que un estudio grabe y cargue los scripts asociados como 
+                    datos de aprendizaje. A continuación, el servicio crea un modelo de voz único ajustado a la
+                    grabación. Asimismo, puede usar esta fuente de voz personalizada para sintetizar la voz
+                </p>
+              </Grid>
+
+         </Grid>
+        </ScrollAnimation>
+
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <ScrollAnimation animateIn="fadeIn">
+          <Grid container columns={2} style = {{margin: "0em 0em"}}>
+            <Grid.Column verticalAlign="middle">
+                <div >
+                  <img  size = "small" src= "https://miro.medium.com/max/556/1*NhOH4X9wKWfO6o8faYFf-w.png" />
+                </div>
+                
+            </Grid.Column>
+            <Grid.Column width={7} floated="right" >
+              <Header as="h3" style={{ fontSize: "2em" } }>
+                Servicio de conversacion de voz a texto
+              </Header>
+              <p style={{ fontSize: "1.33em" }}>
+                La conversión de voz a texto de Servicios de voz de Azure, 
+                también conocida simplemente como voz a texto, permite la 
+                ranscripción en tiempo real de secuencias de audio a texto que las 
+                aplicaciones, herramientas o dispositivos pueden usar, mostrar o actuar 
+                como ante una entrada de comandos. Este servicio funciona con la misma 
+                tecnología de reconocimiento que Microsoft utiliza para los productos de Cortana 
+                y Office, y funciona sin problemas con la traducción y el servicio de texto a voz
+              </p>
+             </Grid.Column>
+
+          </Grid>
+          <Grid style={{ margin: "0em 4em" }}>
+              <p style={{ fontSize: "1.33em" }}>
+              De forma predeterminada, el servicio de voz a texto utiliza el modelo de lenguaje universal.
+               Este modelo se entrenó con datos propiedad de Microsoft y se implementa en la nube. 
+               Resulta óptimo para escenarios de conversación y dictado. Si usa voz a texto para el 
+               reconocimiento y la transcripción en un entorno único, puede crear y entrenar modelos acústicos,
+                lenguaje y pronunciación personalizados para dirigir el sonido ambiental o vocabulario 
+                específico del sector.
+              </p>
+          </Grid>
+          </ScrollAnimation>
+          <ScrollAnimation animateIn="fadeIn">
+          <Grid container columns={2} >
+          <Grid.Column verticalAlign="middle">
+              <Header as="h3" style={{ fontSize: "2em " } }>
+                Servicio de Traduccion de voz
+              </Header>
+              <p style={{ fontSize: "1.33em" }}>
+                La traducción de voz de Servicios de voz de Azure permite la 
+                traducción voz a voz y voz a texto de secuencias de audio en varios 
+                idiomas en tiempo real. Con el SDK de voz, sus aplicaciones, herramientas 
+                y los dispositivos tienen acceso a las transcripciones de origen y a las 
+                salidas de traducción del audio proporcionadas. Se devuelven resultados 
+                provisionales de transcripción y traducción cuando se detecta la voz y los 
+                resultados finales se pueden convertir en voz sintetizada.
+              </p>
+            </Grid.Column>
+             <Grid.Column width={6} floated="right" >
+              <div >
+                <img  height="300" width="300" src= "https://images-na.ssl-images-amazon.com/images/I/41b6XVDD39L._SY355_.png" />
+              </div>
+            </Grid.Column>
+
+          </Grid>
+          <Grid width={5} style={{ margin: "0em 4em" }}>
+              <p style={{ fontSize: "1.33em" }}>
+              De forma predeterminada, el servicio de voz a texto utiliza el modelo de lenguaje universal.
+               Este modelo se entrenó con datos propiedad de Microsoft y se implementa en la nube. 
+               Resulta óptimo para escenarios de conversación y dictado. Si usa voz a texto para el 
+               reconocimiento y la transcripción en un entorno único, puede crear y entrenar modelos acústicos,
+                lenguaje y pronunciación personalizados para dirigir el sonido ambiental o vocabulario 
+                específico del sector.
+              </p>
+          </Grid>
+          </ScrollAnimation>
+
+          
     </Segment>
-    <Segment style={{ padding: "8em 0em" }} vertical>
-      {/*De aquí para abajo es la aprte de abajo*/}
-    </Segment>
+    <br></br>
+    <br></br>
+    <br></br>
+
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
       <Container>
         <Grid divided inverted stackable>

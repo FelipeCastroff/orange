@@ -268,7 +268,7 @@ const HomepageLayout = () => (
       </Grid>
     </Segment>
     <Segment textAlign="center" basic>
-      <ScrollAnimation animateIn="fadeIn">
+      <ScrollAnimation className = "anim" animateIn="fadeIn">
         <Header as="h2">
           {" "}
           Estos son los servicios de voz
