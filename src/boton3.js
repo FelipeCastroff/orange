@@ -16,6 +16,7 @@ import {
   Visibility
 } from "semantic-ui-react";
 import Vista_inicial from "../src/VistaInicial/Vista_inicial";
+import Imagen1 from './Imagenes/I-Example1.png'
 
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
@@ -36,7 +37,7 @@ const HomepageHeading = ({ mobile }) => (
       <Header as="h1" style={{ margintop: "1em" }} />
       <Header
         as="h1"
-        content="Ejemplo bien bonito en Python"
+        content="Ejemplo en Python"
         inverted
         style={{
           fontSize: mobile ? "2em" : "4em",
@@ -57,11 +58,14 @@ const HomepageHeading = ({ mobile }) => (
       />
       <Button
         primary
+        animated
         size="huge"
-        href="https://www.youtube.com/watch?v=SdXeoBZDJJQ&list=RDSdXeoBZDJJQ&start_radio=1"
-      >
-        Vamos a ver monitos Chinos.
-        <Icon name="right arrow" />
+        href="https://docs.microsoft.com/es-es/azure/cognitive-services/speech-service/"
+      > 
+      <Button.Content visible>Sigue explorando</Button.Content>
+      <Button.Content hidden>
+          <Icon name='arrow right' />
+      </Button.Content>
       </Button>
     </Container>
   </div>
@@ -232,8 +236,80 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
+     <Segment style={{ padding: "8em 0em" }} vertical>
+            <Grid container stackable verticalAlign='top'>
+                <Grid.Row>
+                    <Grid.Column width={8}>
+                        <Header as='h2' style={{ fontSize: '2em' }}>
+                            Requisitos previos
+                      </Header>
+                        <Container className='puntonegro'>
+                            <t style={{ fontSize: '1.33me' }}>&bull; Una clave de suscripción de Azure para los servicios de voz. </t>
+                            <a href='https://docs.microsoft.com/es-es/azure/cognitive-services/speech-service/get-started'>
+                                Obtenga una gratis!
+                            </a>
+                            <tr style={{ fontSize: '1.33me' }}>&bull; Python 3.5 o versiones posteriores. <a href='https://www.python.org/downloads/'> Puedes descargarlo aquí!</a> </tr>
+                            <tr style={{ fontSize: '1.33me' }}>&bull; El paquete del SDK de Voz de Python está disponible para estos sistemas operativos: </tr>
+                            <tr style={{ fontSize: '1.33me' }}>&bull; Windows: x64 y x86.</tr>
+                            <tr style={{ fontSize: '1.33me' }}>&bull; Linux: Ubuntu 16.04, Ubuntu 18.04, Debian 9 en x64.</tr>
+                            <tr style={{ fontSize: '1.33me' }}>&bull; Mac: macOS X versión 10.12 o posterior.</tr>
+                            <t style={{ fontSize: '1.33me' }}>&bull; Para Window se necesita</t> <a href = 'https://support.microsoft.com/es-cl/help/2977003/the-latest-supported-visual-c-downloads'> Microsoft Visual C++ Redistributable para Visual Studio 2019.</a>
+                        </Container>
+                    </Grid.Column>
+                    <Grid.Column width ={8}>
+                      <Header as = 'h2' style ={{fontSize: '2em'}}>
+                      Instalación de Speech SDK
+                      </Header>
+                      <p style ={{ fontSize: '1.33me' }}>
+                        Para la instalción de Speech SDK debemos ejecutar este comando para instalar el paquete de Python
+                        desde PyPl para el SDK de voz:
+                      </p>
+                      <t>pip install azure-cognitiveservices-speech</t>
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
+        </Segment>
+        <Segment basic style={{ padding: '2em'}} vertical>
+        <Divider
+          as="h4"
+          className="header"
+          horizontal
+          style={{ margin: "5em 0em", textTransform: "uppercase" }}
+        >
+          <a >Instalación y uso del SDK de Voz con Visual Studio Code</a>
+    </Divider>
+        <Grid container stackable verticalAlign='middle'>
+          <Grid.Row>
+            <Grid.Column width={8}>
+          <p>Una vez ya cumplidos los requisitos previos para windows necesitaremos que abra Visual Studio Code e instale la extensión de Python. Seleccione 
+            <t style={{fontWeight: "bold"}}> File</t> > 
+            <t style={{fontWeight: "bold"}}> Preferences</t> > 
+            <t style={{fontWeight: "bold"}}> Extensions</t> en el menú. Busque Python.</p>
+        </Grid.Column>
+        <Grid.Column width ={8}>
+              <Image
+              fluid
+                src={Imagen1}
+              />
+          </Grid.Column>
+        </Grid.Row>
+        </Grid>
+        <Grid container stackable verticalAlign='middle'>
+          <Grid.Row>
+            <Grid.Column width={8}>
+
+            </Grid.Column>
+            <Grid.Column width ={8}>
+              <Container className='puntonegro'>
+                <tr style={{ fontSize: '1.33me' }}>&bull; Cree una carpeta en la que almacenar el proyecto. Por ejemplo, puede usar para ello el Explorador de Windows.</tr>
+                <tr style={{ fontSize: '1.33me' }}>&bull; En Visual Studio Code, seleccione el icono de <t style={{fontWeight: 'bold'}}> File</t>. A continuación, abra la carpeta que creó.</tr>
+              </Container>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+        </Segment>
     <Segment style={{ padding: "8em 0em" }} vertical>
-      {/*De aquí para abajo es la aprte de abajo*/}
+      {/*Footer*/}
     </Segment>
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
       <Container>
