@@ -234,56 +234,6 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
-    <Segment style={{ padding: "2em" }} vertical>
-      <Grid celled="internally" columns="3" stackable>
-        <Grid.Row textAlign="center">
-          <Grid.Column
-            style={{
-              paddingBottom: "2em",
-              paddingTop: "2em",
-              paddingLeft: "5em"
-            }}
-          >
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              "SpotifyPlayer"
-            </Header>
-            <SpotifyPlayer
-              textAlign="center"
-              uri="spotify:playlist:2MR1jTLD2pWNKNNEfZc8Hr"
-              size="large"
-              view="list"
-              theme="black"
-              playing
-            />
-          </Grid.Column>
-          <Grid.Column style={{ paddingBottom: "1em", paddingTop: "1em" }}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              "Twitch"
-            </Header>
-            <ReactPlayer
-              url="https://www.twitch.tv/sclan2k19"
-              className="react-player"
-              playing
-              volume="0"
-              width="480px"
-              height="270px"
-            ></ReactPlayer>
-          </Grid.Column>
-          <Grid.Column style={{ paddingBottom: "1em", paddingTop: "1em" }}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              "Soundcloud"
-            </Header>
-            <ReactPlayer
-              url="https://soundcloud.com/laurent-decarvin/bag-raiders-shooting-stars"
-              className="react-player"
-              playing
-              width="480px"
-              height="270px"
-            ></ReactPlayer>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
     <Segment style={{ padding: "8em 0em" }} vertical>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
@@ -326,7 +276,7 @@ const HomepageLayout = () => (
                     </a>
                   </th>
                   <th>
-                    <a href="https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/quickstart-python">
+                    <a href="/boton3">
                       <img
                         alt="column 4"
                         src="https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/media/index/logo_python.svg"
@@ -506,6 +456,54 @@ const HomepageLayout = () => (
     </Segment>
     <Segment style={{ padding: "8em 0em" }} vertical>
       {/*Footer de la Pagina*/}
+    </Segment>
+    <Segment style={{ padding: "2em" }} vertical>
+      <Grid celled="internally" columns="3" stackable>
+        <Grid.Row textAlign="center">
+          <Grid.Column
+            style={{
+              paddingBottom: "2em",
+              paddingTop: "2em",
+              paddingLeft: "5em"
+            }}
+          >
+            <Header as="h3" style={{ fontSize: "2em" }}>
+              "SpotifyPlayer"
+            </Header>
+            <SpotifyPlayer
+              textAlign="center"
+              uri="spotify:playlist:2MR1jTLD2pWNKNNEfZc8Hr"
+              size="large"
+              view="list"
+              theme="black"
+              playing
+            />
+          </Grid.Column>
+          <Grid.Column style={{ paddingBottom: "1em", paddingTop: "1em" }}>
+            <Header as="h3" style={{ fontSize: "2em" }}>
+              "GioGio"
+            </Header>
+            <ReactPlayer
+              url="https://www.youtube.com/watch?v=tLyRpGKWXRs"
+              className="react-player"
+              playing
+              width="480px"
+              height="270px"
+            ></ReactPlayer>
+          </Grid.Column>
+          <Grid.Column style={{ paddingBottom: "1em", paddingTop: "1em" }}>
+            <Header as="h3" style={{ fontSize: "2em" }}>
+              "Soundcloud"
+            </Header>
+            <ReactPlayer
+              url="https://soundcloud.com/laurent-decarvin/bag-raiders-shooting-stars"
+              className="react-player"
+              width="480px"
+              height="270px"
+            ></ReactPlayer>
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     </Segment>
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
       <Container>
