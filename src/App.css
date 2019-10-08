@@ -226,3 +226,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+.bg {
+  background-image: url("https://get.pxhere.com/photo/4k-wallpaper-branches-environment-forest-hd-wallpaper-leaves-low-angle-photography-nature-outdoors-pine-trees-tall-tree-tree-trunks-trees-woods-1534621.jpg");
+  height: 102vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

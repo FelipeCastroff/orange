@@ -20,22 +20,15 @@ import Imagen1 from './Imagenes/I-Example1.png'
 import Imagen2 from './Imagenes/I-Example2.png'
 import Imagen3 from './Imagenes/I-Example3.png'
 import Imagen4 from './Imagenes/I-Example4.png'
-import CPython from './CodigoPython'
 import DownloadLink from "react-download-link";
+import ScrollAnimation from "react-animate-on-scroll";
 
-// Heads up!
-// We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
-// For more advanced usage please check Responsive docs under the "Usage" section.
 const getWidth = () => {
   const isSSR = typeof window === "undefined";
 
   return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth;
 };
 
-/* eslint-disable react/no-multi-comp */
-/* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
- * such things.
- */
 const HomepageHeading = ({ mobile }) => (
   <div className="Fondo3">
     <Container>
@@ -49,16 +42,6 @@ const HomepageHeading = ({ mobile }) => (
           fontWeight: "normal",
           marginBottom: mobile ? "0em" : "0em",
           marginTop: mobile ? "1em" : "2em"
-        }}
-      />
-      <Header
-        as="h2"
-        content=" 'Kono Dio Da'"
-        inverted
-        style={{
-          fontSize: mobile ? "1em" : "1em",
-          fontWeight: "normal",
-          marginTop: mobile ? "0em" : "1em"
         }}
       />
       <Button
@@ -80,10 +63,6 @@ HomepageHeading.propTypes = {
   mobile: PropTypes.bool
 };
 
-/* Heads up!
- * Neither Semantic UI nor Semantic UI React offer a responsive navbar, however, it can be implemented easily.
- * It can be more complicated, but you can create really flexible markup.
- */
 class DesktopContainer extends Component {
   state = {};
 
@@ -116,21 +95,21 @@ class DesktopContainer extends Component {
             >
               <Container>
                 <Menu.Item
-                  as="a" /*Ojo con esto en el boton1 onClick={this.toggleShow}*/
-                >
+                  as="a" >
                   <a href="/">HOME</a>
                 </Menu.Item>
                 <Menu.Item as="a">
-                  <a href="/boton1"> BOTON 1</a>
+                  <a href="/boton1"> Lo Basico</a>
                 </Menu.Item>
                 <Menu.Item as="a">
-                  <a href="/boton2"> BOTON 2</a>
+                  <a href="/boton2"> Speech Devices SDK</a>
                 </Menu.Item>
                 <Menu.Item as="a" active>
-                  <a href="/boton3"> BOTON 3</a>
+                  <a href="/boton3"> Implementacion Simple</a>
                 </Menu.Item>
                 <Menu.Item position="right">
-                  <Button as="a" inverted={!fixed}>
+                  <Button as="a" inverted={!fixed}
+                    href='/Login'>
                     Log in
                   </Button>
                   <Button
@@ -138,6 +117,7 @@ class DesktopContainer extends Component {
                     inverted={!fixed}
                     primary={fixed}
                     style={{ marginLeft: "0.5em" }}
+                    href='/SignUp'
                   >
                     Sign Up
                   </Button>
@@ -185,11 +165,12 @@ class MobileContainer extends Component {
           <Menu.Item as="a" active>
             Home
           </Menu.Item>
-          <Menu.Item as="a">Work</Menu.Item>
-          <Menu.Item as="a">Company</Menu.Item>
-          <Menu.Item as="a">Careers</Menu.Item>
-          <Menu.Item as="a">Log in</Menu.Item>
-          <Menu.Item as="a">Sign Up</Menu.Item>
+          <Menu.Item as="a"><a href='/'>HOME</a></Menu.Item>
+          <Menu.Item as="a"><a href='boton1'>Lo Basico</a></Menu.Item>
+          <Menu.Item as="a"><a href='/boton2'>Speech Devices SDK</a></Menu.Item>
+          <Menu.Item as="a"><a href='/boton3'>Implementacion Simple</a></Menu.Item>
+          <Menu.Item as="a"><a href='/Login'>Log in</a></Menu.Item>
+          <Menu.Item as="a"><a href='/SignUp'>Sign Up</a></Menu.Item>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -242,12 +223,14 @@ ResponsiveContainer.propTypes = {
 const HomepageLayout = () => (
   <ResponsiveContainer>
     <Segment style={{ padding: "8em 0em" }} vertical>
+    <ScrollAnimation animateIn='bounceInRight'
+  animateOut='bounceOutLeft'>
       <Grid container stackable verticalAlign='top'>
         <Grid.Row>
           <Grid.Column width={8}>
-            <Header as='h2' style={{ fontSize: '2em' }}>
-              Requisitos previos
-                      </Header>
+              <Header as='h2' style={{ fontSize: '2em' }}>
+                Requisitos previos
+              </Header>
             <Container className='puntonegro'>
               <t style={{ fontSize: '1.33me' }}>&bull; Una clave de suscripción de Azure para los servicios de voz. </t>
               <a href='https://docs.microsoft.com/es-es/azure/cognitive-services/speech-service/get-started'>
@@ -273,6 +256,7 @@ const HomepageLayout = () => (
           </Grid.Column>
         </Grid.Row>
       </Grid>
+      </ScrollAnimation>
     </Segment>
     <Divider
       as="h4"
@@ -282,6 +266,7 @@ const HomepageLayout = () => (
     >
       <a >Instalación y uso del SDK de Voz con Visual Studio Code</a>
     </Divider>
+    <ScrollAnimation animateIn='fadeIn'>
     <Grid container stackable verticalAlign='middle'>
       <Grid.Row>
         <Grid.Column width={8}>
@@ -299,6 +284,8 @@ const HomepageLayout = () => (
       </Grid.Row>
       <Divider />
     </Grid>
+    </ScrollAnimation>
+    <ScrollAnimation animateIn='fadeIn'>
     <Grid container stackable verticalAlign='middle'>
       <Grid.Row>
         <Grid.Column width={8}>
@@ -316,6 +303,8 @@ const HomepageLayout = () => (
       </Grid.Row>
       <Divider />
     </Grid>
+    </ScrollAnimation>
+    <ScrollAnimation animateIn='fadeIn'>
     <Grid container stackable verticalAlign='middle'>
       <Grid.Row>
         <Grid.Column width={8}>
@@ -339,6 +328,8 @@ const HomepageLayout = () => (
       </Grid.Row>
       <Divider />
     </Grid>
+    </ScrollAnimation>
+    <ScrollAnimation animateIn='fadeIn'>
     <Grid container stackable verticalAlign='middle'>
       <Grid.Row>
         <Grid.Column width={8}>
@@ -350,7 +341,7 @@ const HomepageLayout = () => (
         <Grid.Column width={8}>
           <Container className='puntonegro'>
             <tr style={{ fontSize: '1.33me' }}>&bull; Inserte la información de la suscripción de los servicios de voz la cual se obtuvo en los requisitos previos.</tr>
-            <tr style={{ fontSize: '1.33me' }}>&bull; Puede instalar el paquete de Python del SDK de Voz desde dentro de Visual Studio Code. Hágalo si no está instalado
+            <tr style={{ fontSize: '1.33me' }}>&bull; <t style={{ fontWeight: 'bold' }}> *IMPORTANTE*</t> Puede instalar el paquete de Python del SDK de Voz desde dentro de Visual Studio Code. Hágalo si no está instalado
             aún para el intérprete de Python seleccionado. Para instalar el paquete del SDK de Voz, abra un terminal. Abra de nuevo la paleta de comandos (Ctrl+Mayús+P)
             y escriba Terminal: Create New Integrated Terminal (Crear terminal integrado). En el terminal que se abre, escriba el comando python -m pip install
                         azure-cognitiveservices-speech o el que sea apropiado para su sistema.</tr>
@@ -360,6 +351,7 @@ const HomepageLayout = () => (
         </Grid.Column>
       </Grid.Row>
     </Grid>
+    </ScrollAnimation>
     <Segment style={{ padding: "8em 0em" }} vertical>
       {/*Footer*/}
     </Segment>
