@@ -169,7 +169,8 @@ class DesktopContainer extends Component {
                     <a href="/boton3">Implementacion Simple</a>
                   </Menu.Item>
                   <Menu.Item position="right">
-                    <Button as="a" inverted={!fixed}>
+                    <Button as="a" inverted={!fixed}
+                     href = '/Login'>
                       Log in
                     </Button>
                     <Button

@@ -137,7 +137,8 @@ class DesktopContainer extends Component {
                   <a href="/boton3"> Implementacion Simple </a>
                 </Menu.Item>
                 <Menu.Item position="right">
-                  <Button as="a" inverted={!fixed}>
+                  <Button as="a" inverted={!fixed}
+                  href = '/Login'>
                     Log in
                   </Button>
                   <Button
@@ -196,7 +197,7 @@ class MobileContainer extends Component {
           <Menu.Item href="/" as="a">Home</Menu.Item>
           <Menu.Item href="/boton1" as="a">Lo Basico</Menu.Item>
           <Menu.Item href="/boton2" as="a">Speech Devices SDK</Menu.Item>
-          <Menu.Item href="/boton3" as="a">Implementacio simple</Menu.Item>
+          <Menu.Item href="/boton3" as="a">Implementacion simple</Menu.Item>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>

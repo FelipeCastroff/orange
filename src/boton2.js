@@ -16,6 +16,7 @@ import {
   Segment,
   Sidebar,
   Visibility,
+  Portal,
   GridColumn
 } from "semantic-ui-react";
 import Vista_inicial from "../src/VistaInicial/Vista_inicial";
@@ -45,6 +46,7 @@ const HomepageHeading = ({ mobile }) => (
           marginTop: mobile ? "1em" : "2em"
         }}
       />
+
       
     </Container>
   </div>
@@ -423,6 +425,23 @@ const HomepageLayout = () => (
           </ScrollAnimation>
 
           
+    </Segment>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <Segment             
+            basic
+            textAlign="center"
+            style={{ padding: "0em 0em" }}
+            verticalAlign="middle"
+            vertical>
+              <Grid textAlign="center" verticalAlign = "middle">
+              <h1>mas informacion sobre los servicios de azure   </h1>
+              <a  href="https://azure.microsoft.com/es-es/services/" ><Icon   name='external alternate'  /></a>
+              </Grid>
+               
+      
     </Segment>
     <br></br>
     <br></br>

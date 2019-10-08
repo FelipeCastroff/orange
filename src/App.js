@@ -6,6 +6,7 @@ import Vista from "../src/VistaInicial/Vista_inicial";
 import Boton1 from "./boton1";
 import Boton2 from "./boton2";
 import Boton3 from "./boton3";
+import Login from './Login';
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -16,6 +17,7 @@ const App = () => (
       <Route exact path="/boton1" component={Boton1} />
       <Route exact path="/boton2" component={Boton2} />
       <Route exact path="/boton3" component={Boton3} />
+      <Route exact path="/Login"  component={Login} />
     </Switch>
   </BrowserRouter>
 );
