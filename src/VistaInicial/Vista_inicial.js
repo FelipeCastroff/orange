@@ -12,7 +12,9 @@ import {
   Responsive,
   Segment,
   Sidebar,
-  Visibility
+  Visibility,
+  Comment,
+  Form
 } from "semantic-ui-react";
 import ScrollAnimation from "react-animate-on-scroll";
 
@@ -24,6 +26,7 @@ import TextoTra from "../Imagenes/speech-translation.png";
 import Java from "./java.png";
 import Python from "./python.png";
 import Net from "./net.png";
+import Conve from './conversa.jpg';
 
 import "./inicial.css";
 import "../App.css";
@@ -246,179 +249,249 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
-    <Segment style={{ padding: "8em 0em" }} vertical>
+    <div className='boxFeatures'>
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column width={8}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              ¿Qué son los servicios Voz?
+            <ScrollAnimation animateIn='fadeIn'>
+              <Header as="h3" style={{ fontSize: "2em" }}>
+                ¿Qué son los servicios Voz?
             </Header>
-            <p style={{ fontSize: "1.33em" }}>
-              Los servicios de voz de Azure se dividen en 3 categorías las
-              cuales estan formadas por los servicios de voz a texto, texto a
-              voz y traducción de voz. Ademas de facilitar este trabajo con el
-              SDK de voz, el SDK de dispositivos de voz o las API de Rest.
+              <p style={{ fontSize: "1.33em" }}>
+                Los servicios de voz de Azure se dividen en 3 categorías las
+                cuales estan formadas por los servicios de voz a texto, texto a
+                voz y traducción de voz. Ademas de facilitar este trabajo con el
+                SDK de voz, el SDK de dispositivos de voz o las API de Rest.
             </p>
+            </ScrollAnimation>
+
           </Grid.Column>
           <Grid.Column floated="right" width={6}>
-            <Image bordered rounded size="medium" src={Imagen1} />
+            <ScrollAnimation animateIn='fadeIn'>
+              <br></br>
+              <Image src={Conve} className='imgAbout' />
+            </ScrollAnimation>
+
           </Grid.Column>
         </Grid.Row>
         <Grid.Row></Grid.Row>
       </Grid>
-    </Segment>
-    <Segment textAlign="center" basic>
-      <ScrollAnimation className = "anim" animateIn="fadeIn">
-        <Header as="h2">
-          {" "}
-          Estos son los servicios de voz
-          <Header.Subheader>
+      <br></br> <br></br>
+    </div>
+
+    <div textAlign='center' centered >
+      <div className='boxFeatures'>
+        <br></br> <br></br>
+        <ScrollAnimation animateIn='fadeIn'>
+          <Header as='h2' textAlign='center' centered> Estos son los servicios de voz
+        <Header.Subheader >
+              <br></br>
+              Convierta audio en texto, traduzca voz y convierta texto en voz con los servicios de voz unificados
+        </Header.Subheader>
             <br></br>
-            Convierta audio en texto, traduzca voz y convierta texto en voz con
-            los servicios de voz unificados
-          </Header.Subheader>
+          </Header>
+        </ScrollAnimation>
+
+        <ScrollAnimation animateIn='bounceInRight'>
+
+          <Grid centered columns={4} >
+            <Grid.Row >
+              <Grid.Column className='cardFeatures'>
+                <Image src={VozTexto} centered />
+              </Grid.Column>
+              <Grid.Column className='cardFeatures'>
+                <Image src={TextoVoz} centered />
+              </Grid.Column>
+              <Grid.Column className='cardFeatures'>
+                <Image src={TextoTra} centered />
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row>
+              <Grid.Column>
+                <h3 > Speech to Text </h3>
+              </Grid.Column>
+              <Grid.Column>
+                <h3 > Text to Speech </h3>
+              </Grid.Column>
+              <Grid.Column>
+                <h3 > Traducción de voz </h3>
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row>
+              <Grid.Column>
+                <span> La transcripción de conversaciones captura la voz en tiempo real para que todos los participantes de la reunión puedan participar de lleno en la discusión, identificar lo que ha dicho cada uno y cuándo se ha dicho y continuar rápidamente con los pasos siguientes.</span>
+              </Grid.Column>
+              <Grid.Column>
+                <span> Compile aplicaciones y servicios que se dirijan a los usuarios de forma natural, por lo que mejorarán la accesibilidad y la usabilidad. Convierta texto en audio en tiempo casi real, reprodúzcalo y guárdelo como archivo para usarlo más adelante. Text to Speech está disponible en las versiones Neural y Standard.</span>
+              </Grid.Column>
+              <Grid.Column>
+                <span> Incorpore a su aplicación funcionalidad de traducción de voz en tiempo real para cualquiera de los idiomas admitidos y reciba la traducción en forma de texto o de voz. Los modelos de Speech Translation se basan en tecnologías vanguardistas de reconocimiento de voz y traducción automática neuronal (NMT). Están optimizados para comprender la forma de hablar de las personas en la vida real y generar traducciones de una calidad excepcional.</span>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+        </ScrollAnimation>
+        <br></br>
+      </div>
+    </div>
+
+    <div textAlign='center' >
+      <div className='boxFeatures'>
+        <br></br>
+        <br></br>
+        <br></br>
+        <ScrollAnimation animateIn='fadeIn'>
+          <Header as='h2' textAlign='center' centered> Desarrollo de aplicaciones
+        <Header.Subheader>
+              <br></br>
+              Desarrolle aplicaciones en estos 3 principales lenguajes
+        </Header.Subheader>
+            <br></br>
+          </Header>
+        </ScrollAnimation>
+
+        <ScrollAnimation animateIn='bounceInLeft'>
+          <Grid centered columns={4} >
+            <Grid.Row>
+              <Grid.Column className='cardFeatures'>
+                <Image
+                  src={Net} centered
+                />
+              </Grid.Column>
+              <Grid.Column className='cardFeatures'>
+                <Image
+                  src={Python} centered size='small'
+                />
+              </Grid.Column>
+              <Grid.Column className='cardFeatures'>
+                <Image
+                  src={Java} centered size='small'
+                />
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row>
+              <Grid.Column>
+                <h3 > .NET </h3>
+              </Grid.Column>
+              <Grid.Column>
+                <h3 > Python </h3>
+              </Grid.Column>
+              <Grid.Column>
+                <h3 > Java </h3>
+              </Grid.Column>
+            </Grid.Row>
+
+            <Grid.Row>
+              <Grid.Column>
+                <span> Aprenda a compilar aplicaciones de .NET y .NET Core con los servicios de Azure y C#.</span>
+              </Grid.Column>
+              <Grid.Column>
+                <span> Las bibliotecas de Azure para Python le permiten usar los servicios de Azure y administrar los recursos de Azure desde el código de su aplicación.</span>
+              </Grid.Column>
+              <Grid.Column>
+                <span> App Service en Linux proporciona un servicio de alojamiento web altamente escalable y auto-parcheado que utiliza el sistema operativo Linux. Este inicio rápido muestra cómo usar la CLI de Azure con el complemento de Maven para Azure App Service para implementar un archivo Java web archive (WAR) en el sistema operativo Linux.</span>
+              </Grid.Column>
+            </Grid.Row>
+          </Grid>
+          <br></br> <br></br>
+        </ScrollAnimation>
+      </div>
+    </div>
+
+    <div className='boxFeatures' centered>
+      <ScrollAnimation animateIn='fadeIn'>
+        <Header as='h2' textAlign='center' centered> Comentarios
+        <Header.Subheader>
+            <br></br>
+            Comparte lo que piensas con la comunidad
+        </Header.Subheader>
+          <br></br>
         </Header>
-        <br></br>
       </ScrollAnimation>
-
-      <ScrollAnimation animateIn="bounceInRight">
-        <Grid centered columns={4}>
+      <ScrollAnimation animateIn='bounceInRight'>
+        <Grid columns={3} centered>
           <Grid.Row>
             <Grid.Column>
-              <Image src={VozTexto} centered />
-            </Grid.Column>
-            <Grid.Column>
-              <Image src={TextoVoz} centered />
-            </Grid.Column>
-            <Grid.Column>
-              <Image src={TextoTra} centered />
-            </Grid.Column>
-          </Grid.Row>
+              <Comment.Group cen>
+                <Comment>
+                  <Comment.Avatar src='/images/avatar/small/matt.jpg' />
+                  <Comment.Content>
+                    <Comment.Author as='a'>Matt</Comment.Author>
+                    <Comment.Metadata>
+                      <div>Today at 5:42PM</div>
+                    </Comment.Metadata>
+                    <Comment.Text>How artistic!</Comment.Text>
+                    <Comment.Actions>
+                      <Comment.Action>Reply</Comment.Action>
+                    </Comment.Actions>
+                  </Comment.Content>
+                </Comment>
 
-          <Grid.Row>
-            <Grid.Column>
-              <h3> Speech to Text </h3>
-            </Grid.Column>
-            <Grid.Column>
-              <h3> Text to Speech </h3>
-            </Grid.Column>
-            <Grid.Column>
-              <h3> Traducción de voz </h3>
-            </Grid.Column>
-          </Grid.Row>
+                <Comment>
+                  <Comment.Avatar src='/images/avatar/small/elliot.jpg' />
+                  <Comment.Content>
+                    <Comment.Author as='a'>Elliot Fu</Comment.Author>
+                    <Comment.Metadata>
+                      <div>Yesterday at 12:30AM</div>
+                    </Comment.Metadata>
+                    <Comment.Text>
+                      <p>This has been very useful for my research. Thanks as well!</p>
+                    </Comment.Text>
+                    <Comment.Actions>
+                      <Comment.Action>Reply</Comment.Action>
+                    </Comment.Actions>
+                  </Comment.Content>
+                  <Comment.Group>
+                    <Comment>
+                      <Comment.Avatar src='/images/avatar/small/jenny.jpg' />
+                      <Comment.Content>
+                        <Comment.Author as='a'>Jenny Hess</Comment.Author>
+                        <Comment.Metadata>
+                          <div>Just now</div>
+                        </Comment.Metadata>
+                        <Comment.Text>Elliot you are always so right :)</Comment.Text>
+                        <Comment.Actions>
+                          <Comment.Action>Reply</Comment.Action>
+                        </Comment.Actions>
+                      </Comment.Content>
+                    </Comment>
+                  </Comment.Group>
+                </Comment>
 
-          <Grid.Row>
-            <Grid.Column>
-              <span>
-                {" "}
-                La transcripción de conversaciones captura la voz en tiempo real
-                para que todos los participantes de la reunión puedan participar
-                de lleno en la discusión, identificar lo que ha dicho cada uno y
-                cuándo se ha dicho y continuar rápidamente con los pasos
-                siguientes.
-              </span>
+                <Comment>
+                  <Comment.Avatar src='/images/avatar/small/joe.jpg' />
+                  <Comment.Content>
+                    <Comment.Author as='a'>Joe Henderson</Comment.Author>
+                    <Comment.Metadata>
+                      <div>5 days ago</div>
+                    </Comment.Metadata>
+                    <Comment.Text>Dude, this is awesome. Thanks so much</Comment.Text>
+                    <Comment.Actions>
+                      <Comment.Action>Reply</Comment.Action>
+                    </Comment.Actions>
+                  </Comment.Content>
+                </Comment>
+              </Comment.Group>
             </Grid.Column>
+
             <Grid.Column>
-              <span>
-                {" "}
-                Compile aplicaciones y servicios que se dirijan a los usuarios
-                de forma natural, por lo que mejorarán la accesibilidad y la
-                usabilidad. Convierta texto en audio en tiempo casi real,
-                reprodúzcalo y guárdelo como archivo para usarlo más adelante.
-                Text to Speech está disponible en las versiones Neural y
-                Standard.
-              </span>
-            </Grid.Column>
-            <Grid.Column>
-              <span>
-                {" "}
-                Incorpore a su aplicación funcionalidad de traducción de voz en
-                tiempo real para cualquiera de los idiomas admitidos y reciba la
-                traducción en forma de texto o de voz. Los modelos de Speech
-                Translation se basan en tecnologías vanguardistas de
-                reconocimiento de voz y traducción automática neuronal (NMT).
-                Están optimizados para comprender la forma de hablar de las
-                personas en la vida real y generar traducciones de una calidad
-                excepcional.
-              </span>
+              <Form reply>
+                <Form.Field>
+                  <label>Nombre</label>
+                  <input placeholder='Nombre' />
+                </Form.Field>
+                <Form.TextArea label='Comentario' placeholder='Escribenos...' />
+                <button type='submit' className='botonEnviarMensaje'> Enviar mensaje</button>
+              </Form>
             </Grid.Column>
           </Grid.Row>
         </Grid>
       </ScrollAnimation>
+      <br></br> <br></br>
+    </div>
 
-      <br></br>
-    </Segment>
-
-    <Segment textAlign="center" basic>
-      <ScrollAnimation animateIn="fadeIn">
-        <Header as="h2">
-          {" "}
-          Desarrollo de aplicaciones
-          <Header.Subheader>
-            <br></br>
-            Desarrolle aplicaciones en estos 3 principales lenguajes
-          </Header.Subheader>
-        </Header>{" "}
-        <br></br>
-      </ScrollAnimation>
-
-      <ScrollAnimation animateIn="bounceInLeft">
-        <Grid centered columns={4}>
-          <Grid.Row>
-            <Grid.Column>
-              <Image src={Net} centered />
-            </Grid.Column>
-            <Grid.Column>
-              <Image src={Python} centered size="small" />
-            </Grid.Column>
-            <Grid.Column>
-              <Image src={Java} centered size="small" />
-            </Grid.Column>
-          </Grid.Row>
-
-          <Grid.Row>
-            <Grid.Column>
-              <h3> .NET </h3>
-            </Grid.Column>
-            <Grid.Column>
-              <h3> Python </h3>
-            </Grid.Column>
-            <Grid.Column>
-              <h3> Java </h3>
-            </Grid.Column>
-          </Grid.Row>
-
-          <Grid.Row>
-            <Grid.Column>
-              <span>
-                {" "}
-                Aprenda a compilar aplicaciones de .NET y .NET Core con los
-                servicios de Azure y C#.
-              </span>
-            </Grid.Column>
-            <Grid.Column>
-              <span>
-                {" "}
-                Las bibliotecas de Azure para Python le permiten usar los
-                servicios de Azure y administrar los recursos de Azure desde el
-                código de su aplicación.
-              </span>
-            </Grid.Column>
-            <Grid.Column>
-              <span>
-                {" "}
-                App Service en Linux proporciona un servicio de alojamiento web
-                altamente escalable y auto-parcheado que utiliza el sistema
-                operativo Linux. Este inicio rápido muestra cómo usar la CLI de
-                Azure con el complemento de Maven para Azure App Service para
-                implementar un archivo Java web archive (WAR) en el sistema
-                operativo Linux.
-              </span>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </ScrollAnimation>
-    </Segment>
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
       <Container>
         <Grid divided inverted stackable>

@@ -16,11 +16,12 @@ import {
   Visibility,
   Table
 } from "semantic-ui-react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import ReactPlayer from "react-player";
 import Vista_inicial from "../src/VistaInicial/Vista_inicial";
 import SpotifyPlayer from "react-spotify-player";
 import Boton1Alt from "./boton1Alt";
+import ScrollAnimation from "react-animate-on-scroll";
 
 export const Input = styled.input`
   border: 1px solid #333;
@@ -36,6 +37,28 @@ const getWidth = () => {
 
   return isSSR ? Responsive.onlyTablet.minWidth : window.innerWidth;
 };
+const HeaderStyled = styled.header`
+  background: white;
+  border-radius: 3px;
+  border: none;
+  color: black;
+`;
+// creamos el keyframe y como se movera
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+//Creamos el componente a rotar
+const Rotate = styled.div`
+  display: inline-block;
+  animation: ${rotate} 2s linear infinite;
+  padding: 2rem 1rem;
+  font-size: 1.2rem;
+`;
 
 /* eslint-disable react/no-multi-comp */
 /* Heads up! HomepageHeading uses inline styling, however it's not the best practice. Use CSS or styled components for
@@ -45,28 +68,43 @@ const getWidth = () => {
 const HomepageHeading = ({ mobile }) => (
   <div className="Fondo1">
     <Container>
-      <Header as="h1" style={{ margintop: "1em" }} />
-      <Header
-        as="h1"
-        content="Documentacion y Detalles"
-        inverted
-        style={{
-          fontSize: mobile ? "2em" : "4em",
-          fontWeight: "normal",
-          marginBottom: mobile ? "0em" : "0em",
-          marginTop: mobile ? "1em" : "2em"
-        }}
-      />
-      <Header
-        as="h2"
-        content="Speech Services esta disponible para su desarrollo en diversos lenguajes"
-        inverted
-        style={{
-          fontSize: mobile ? "2em" : "2em",
-          fontWeight: "normal",
-          marginTop: mobile ? "0em" : "1em"
-        }}
-      />
+      <Header as="h1" style={{ margintop: "1em" }} styled />
+      <ScrollAnimation
+        animateIn="bounce"
+        initiallyVisible={true}
+        animateOnce={true}
+      >
+        <HeaderStyled>
+          <Header
+            as="h1"
+            content="Documentacion y Detalles"
+            style={{
+              fontSize: mobile ? "2em" : "4em",
+              fontWeight: "normal",
+              marginBottom: mobile ? "0m" : "0em",
+              marginTop: mobile ? "0.5em" : "1em"
+            }}
+          />
+          <Rotate>
+            <Image
+              size="mini"
+              src="https://pbs.twimg.com/profile_images/1037189134182432768/s9bGsnz__400x400.jpg"
+            />
+          </Rotate>
+        </HeaderStyled>
+      </ScrollAnimation>
+      <ScrollAnimation animateIn="fadeIn">
+        <Header
+          as="h2"
+          content="Speech Services esta disponible para su desarrollo en diversos lenguajes"
+          inverted
+          style={{
+            fontSize: mobile ? "2em" : "2em",
+            fontWeight: "normal",
+            marginTop: mobile ? "0em" : "1em"
+          }}
+        />
+      </ScrollAnimation>
     </Container>
   </div>
 );
@@ -119,16 +157,16 @@ class DesktopContainer extends Component {
               >
                 <Container>
                   <Menu.Item as="a">
-                    <a href="/"> HOME</a>
+                    <a href="/"> Home</a>
                   </Menu.Item>
                   <Menu.Item as="a" active>
-                    <a href="/boton1"> BOTON 1 </a>
+                    <a href="/boton1"> Lo Basico </a>
                   </Menu.Item>
                   <Menu.Item as="a">
-                    <a href="/boton2"> BOTON 2</a>
+                    <a href="/boton2"> Speech Device SDK</a>
                   </Menu.Item>
                   <Menu.Item as="a">
-                    <a href="/boton3"> BOTON 3 </a>
+                    <a href="/boton3">Implementacion Simple</a>
                   </Menu.Item>
                   <Menu.Item position="right">
                     <Button as="a" inverted={!fixed}>
@@ -258,9 +296,14 @@ const HomepageLayout = () => (
       <Grid container stackable verticalAlign="middle">
         <Grid.Row>
           <Grid.Column width={8}>
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              ¡Puede Aprender a usar el SDK en solo 5 minutos!
-            </Header>
+            <ScrollAnimation animateIn="bounce" initiallyVisible={true}>
+              <Header as="h3" style={{ fontSize: "2em" }}>
+                ¡Puede Aprender a usar el SDK en solo 5 minutos!
+                <Header as="h3" style={{ fontSize: "0.8em" }}>
+                  Escoja uno de estos lenguajes de programacion y comience ya!
+                </Header>
+              </Header>
+            </ScrollAnimation>
             <Table className="dataMatrix">
               <tbody>
                 <tr>
@@ -378,20 +421,26 @@ const HomepageLayout = () => (
               .
             </p>
           </Grid.Column>
+
           <Grid.Column floated="right" width={7}>
-            <div class="c">
-              <div class="i">
-                <a href="https://youtu.be/7ecYoSvGO60?t=11">
-                  <img
-                    class="img"
-                    src="https://www.exomundos.com/wp-content/uploads/2017/09/rick-morty-670x335.jpg"
-                  />
-                </a>
+            <ScrollAnimation
+              animateIn="bounceInRight"
+              animateOut="bounceOutLeft"
+            >
+              <div class="c">
+                <div class="i">
+                  <a href="https://youtu.be/7ecYoSvGO60?t=11">
+                    <img
+                      class="img"
+                      src="https://www.exomundos.com/wp-content/uploads/2017/09/rick-morty-670x335.jpg"
+                    />
+                  </a>
+                </div>
+                <div class="s1"></div>
+                <div class="s2"></div>
+                <div class="s3"></div>
               </div>
-              <div class="s1"></div>
-              <div class="s2"></div>
-              <div class="s3"></div>
-            </div>
+            </ScrollAnimation>
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
@@ -407,36 +456,39 @@ const HomepageLayout = () => (
         </Grid.Row>
       </Grid>
     </Segment>
-    <Segment style={{ padding: "2em" }} vertical>
-      <Grid celled="internally" columns="2" stackable>
-        <Grid.Row textAlign="center">
-          <Grid.Column
-            style={{
-              paddingBottom: "4em",
-              paddingTop: "5em",
-              paddingLeft: "10em"
-            }}
-          >
-            <Header as="h3" style={{ fontSize: "2em" }}>
-              "Escenarios empresariales basados en servicios de voz"
-            </Header>
-            <p style={{ fontSize: "1.5em" }}>
-              Transcriba fácilmente las llamadas y optimice los resultados con
-              servicios de transcripción por lotes y de voz personalizada
-              mejorados para centros de llamadas.
-            </p>
-          </Grid.Column>
-          <Grid.Column style={{ paddingBottom: "1em", paddingTop: "1em" }}>
-            <p style={{ fontSize: "9em" }}>
-              <Image
-                avatar
-                src="https://azurecomcdn.azureedge.net/cvt-add6f4a23186e176ede2ce0357a4c26bb9352332c93c37a18e80bd3245a301b9/images/page/services/cognitive-services/speech-services/speech-category.svg"
-              />
-            </p>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Segment>
+    <ScrollAnimation animateIn="flipInX" animateOut="flipOutX">
+      <Segment style={{ padding: "2em" }} vertical>
+        <Grid celled="internally" columns="2" stackable>
+          <Grid.Row textAlign="center">
+            <Grid.Column
+              style={{
+                paddingBottom: "4em",
+                paddingTop: "5em",
+                paddingLeft: "10em"
+              }}
+            >
+              <Header as="h3" style={{ fontSize: "2em" }}>
+                "Escenarios empresariales basados en servicios de voz"
+              </Header>
+              <p style={{ fontSize: "1.5em" }}>
+                Transcriba fácilmente las llamadas y optimice los resultados con
+                servicios de transcripción por lotes y de voz personalizada
+                mejorados para centros de llamadas.
+              </p>
+            </Grid.Column>
+
+            <Grid.Column style={{ paddingBottom: "1em", paddingTop: "1em" }}>
+              <p style={{ fontSize: "9em" }}>
+                <Image
+                  avatar
+                  src="https://azurecomcdn.azureedge.net/cvt-add6f4a23186e176ede2ce0357a4c26bb9352332c93c37a18e80bd3245a301b9/images/page/services/cognitive-services/speech-services/speech-category.svg"
+                />
+              </p>
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Segment>
+    </ScrollAnimation>
     <Segment style={{ padding: "8em 0em" }} vertical>
       <Container text>
         <Header as="h3" textAlign="center" style={{ fontSize: "2em" }}>
@@ -457,21 +509,23 @@ const HomepageLayout = () => (
         >
           <a href="#">Case Studies</a>
         </Divider>
-        <Header as="h3" style={{ fontSize: "2em" }}>
-          Les comentamos que esta seccion...
-        </Header>
-        <p style={{ fontSize: "1.33em" }}>
-          ...Esta seccion no busca explicar nada necesariamente concreto pero si
-          bastante necesario en algunos ambitos de dudosa procedencia, siendo un
-          caso bastante concreto el cuestionamiento que engendra en la mente del
-          lector a la hora de buscar cierto sentido a las palabras colocadas en
-          esta seccion sin cubrir un espectro de atencion lo suficientemente
-          alto como para dejar de lado la tarea de terminar de leer este parrafo
-          para saber como concluira pero siempre sabiendo que todo se acabara
-          con un punto Final.
-        </p>
+        <ScrollAnimation animateIn="fadeIn" animateOut="fadeOut">
+          <Header as="h3" style={{ fontSize: "2em" }}>
+            Les comentamos que esta seccion...
+          </Header>
+          <p style={{ fontSize: "1.33em" }}>
+            ...Esta seccion no busca explicar nada necesariamente concreto pero
+            si bastante necesario en algunos ambitos de dudosa procedencia,
+            siendo un caso bastante concreto el cuestionamiento que engendra en
+            la mente del lector a la hora de buscar cierto sentido a las
+            palabras colocadas en esta seccion sin cubrir un espectro de
+            atencion lo suficientemente alto como para dejar de lado la tarea de
+            terminar de leer este parrafo para saber como concluira pero siempre
+            sabiendo que todo se acabara con un punto Final.
+          </p>
 
-        <Input placeholder="Escriba Comentarios(no enviables)"></Input>
+          <Input placeholder="Escriba Comentarios(no enviables)"></Input>
+        </ScrollAnimation>
       </Container>
     </Segment>
     <Segment style={{ padding: "8em 0em" }} vertical>
@@ -504,10 +558,10 @@ const HomepageLayout = () => (
               "Youtube"
             </Header>
             <ReactPlayer
-              url="https://youtu.be/p00v9ZFhWJM?t=13"
+              url="https://www.youtube.com/watch?v=qeMFqkcPYcg"
               className="react-player"
               playing
-              width="480px"
+              width="500px"
               height="270px"
             ></ReactPlayer>
           </Grid.Column>
@@ -518,7 +572,7 @@ const HomepageLayout = () => (
             <ReactPlayer
               url="https://soundcloud.com/laurent-decarvin/bag-raiders-shooting-stars"
               className="react-player"
-              width="480px"
+              width="500px"
               height="270px"
             ></ReactPlayer>
           </Grid.Column>
