@@ -16,22 +16,20 @@ import {
   Comment,
   Form
 } from "semantic-ui-react";
-import ScrollAnimation from 'react-animate-on-scroll';
+import ScrollAnimation from "react-animate-on-scroll";
 
-import Imagen1 from '../Imagenes/Imagen1.png';
-import VozTexto from '../Imagenes/speech-text.png';
-import TextoVoz from '../Imagenes/text-to-speech.png';
-import TextoTra from '../Imagenes/speech-translation.png';
+import Imagen1 from "../Imagenes/Imagen1.png";
+import VozTexto from "../Imagenes/speech-text.png";
+import TextoVoz from "../Imagenes/text-to-speech.png";
+import TextoTra from "../Imagenes/speech-translation.png";
 
-
+import Java from "./java.png";
+import Python from "./python.png";
+import Net from "./net.png";
 import Conve from './conversa.jpg';
-import Java from './java.png';
-import Python from './python.png';
-import Net from './net.png';
-import Fondo from './fondo.gif'
 
-import './inicial.css';
-import '../App.css';
+import "./inicial.css";
+import "../App.css";
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
 // For more advanced usage please check Responsive docs under the "Usage" section.

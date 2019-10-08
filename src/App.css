@@ -38,7 +38,7 @@
   background-position: top;
 }
 .Fondo_Inicial {
-  background-image: url("http://eskipaper.com/images/river-wallpaper-19.jpg");
+  background-image: url("https://images.unsplash.com/photo-1505807557511-bc38492556a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80");
   height: 80vh;
   background-position: center;
 }
@@ -167,7 +167,7 @@
   -webkit-animation-delay: 0.1s;
   animation-delay: 0.1s;
   --x1: 0;
-  --x2: 95%;
+  --x2: 100%;
 }
 
 h1 {
@@ -186,3 +186,34 @@ h1 {
 .info a {
   color: inherit;
 }
+.punto {
+  font-size: 15px;
+  color: green;
+}
+.punto td:nth-child(1) {
+  color: #ce5937;
+  font-size: 15px;
+}
+.punto td {
+  vertical-align: top;
+  border: 1px solid #ddd;
+  padding: 2px 10px;
+  vertical-align: middle;
+}
+
+.dataMatrix {
+  margin-top: 24px;
+  width: unset;
+}
+main table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: auto;
+  width: 100%;
+  font-size: 0.875rem;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+

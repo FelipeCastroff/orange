@@ -15,7 +15,7 @@ import {
   Sidebar,
   Visibility
 } from "semantic-ui-react";
-import Vista_inicial from '../src/VistaInicial/Vista_inicial';
+import Vista_inicial from "../src/VistaInicial/Vista_inicial";
 
 // Heads up!
 // We using React Static to prerender our docs with server side rendering, this is a quite simple solution.
@@ -106,17 +106,19 @@ class DesktopContainer extends Component {
               size="large"
             >
               <Container>
-                <Menu.Item as="a" /*Ojo con esto en el boton1 onClick={this.toggleShow}*/>
-                  <a href='/'>HOME</a>
+                <Menu.Item
+                  as="a" /*Ojo con esto en el boton1 onClick={this.toggleShow}*/
+                >
+                  <a href="/">HOME</a>
                 </Menu.Item>
                 <Menu.Item as="a">
-                  <a href='/boton1'> BOTON 1</a>
+                  <a href="/boton1"> BOTON 1</a>
                 </Menu.Item>
                 <Menu.Item as="a">
-                  <a href='/boton2'> BOTON 2</a>
+                  <a href="/boton2"> BOTON 2</a>
                 </Menu.Item>
                 <Menu.Item as="a" active>
-                  <a href='/boton3' > BOTON 3</a>
+                  <a href="/boton3"> BOTON 3</a>
                 </Menu.Item>
                 <Menu.Item position="right">
                   <Button as="a" inverted={!fixed}>
@@ -153,7 +155,6 @@ class MobileContainer extends Component {
   handleSidebarHide = () => this.setState({ sidebarOpened: false });
 
   handleToggle = () => this.setState({ sidebarOpened: true });
-
 
   render() {
     const { children } = this.props;
@@ -231,7 +232,8 @@ ResponsiveContainer.propTypes = {
 
 const HomepageLayout = () => (
   <ResponsiveContainer>
-    <Segment style={{ padding: "8em 0em" }} vertical>{/*De aquí para abajo es la aprte de abajo*/}
+    <Segment style={{ padding: "8em 0em" }} vertical>
+      {/*De aquí para abajo es la aprte de abajo*/}
     </Segment>
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
       <Container>
@@ -240,25 +242,51 @@ const HomepageLayout = () => (
             <Grid.Column width={3}>
               <Header inverted as="h4" content="Contactanos" />
               <List link inverted>
-                <List.Item as="a" href='https://p7.hiclipart.com/preview/405/543/746/dio-brando-internet-meme-know-your-meme-rage-comic-jojo-s-bizarre-adventure-others.jpg'>
-                  Dio</List.Item>
-                <List.Item as="a" href='https://www.trifenix.io'>Contact Us</List.Item>
-                <List.Item as="a" >+56952984672</List.Item>
+                <List.Item
+                  as="a"
+                  href="https://p7.hiclipart.com/preview/405/543/746/dio-brando-internet-meme-know-your-meme-rage-comic-jojo-s-bizarre-adventure-others.jpg"
+                >
+                  Dio
+                </List.Item>
+                <List.Item as="a" href="https://www.trifenix.io">
+                  Contact Us
+                </List.Item>
+                <List.Item as="a">+56952984672</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
               <Header inverted as="h4" content="Instagrams" />
               <List link inverted>
-                <List.Item as="a" href='https://www.instagram.com/_alondra_hg/?hl=es-la'>
-                  Sofia Gallardo</List.Item>
-                <List.Item as="a" href='https://www.instagram.com/weon.simio/?hl=es-la'>
-                  Fernando Del Pino</List.Item>
-                <List.Item as="a" href='https://www.instagram.com/ignacio_lopez_nicolas/?hl=es-la'>
-                  Ignacio Lopez</List.Item>
-                <List.Item as="a" href='https://www.instagram.com/felipe_castro.exe/?hl=es-la'>
-                  Felipe Castro</List.Item>
-                <List.Item as='a' href='https://www.instagram.com/trifenix.io/?hl=es-la'>
-                  Trifeniz.io</List.Item>
+                <List.Item
+                  as="a"
+                  href="https://www.instagram.com/_alondra_hg/?hl=es-la"
+                >
+                  Sofia Gallardo
+                </List.Item>
+                <List.Item
+                  as="a"
+                  href="https://www.instagram.com/weon.simio/?hl=es-la"
+                >
+                  Fernando Del Pino
+                </List.Item>
+                <List.Item
+                  as="a"
+                  href="https://www.instagram.com/ignacio_lopez_nicolas/?hl=es-la"
+                >
+                  Ignacio Lopez
+                </List.Item>
+                <List.Item
+                  as="a"
+                  href="https://www.instagram.com/felipe_castro.exe/?hl=es-la"
+                >
+                  Felipe Castro
+                </List.Item>
+                <List.Item
+                  as="a"
+                  href="https://www.instagram.com/trifenix.io/?hl=es-la"
+                >
+                  Trifeniz.io
+                </List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={7}>
