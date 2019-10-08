@@ -1,3 +1,29 @@
+### Librerias y contenido Necesario
+
+Se requiere realizar la instalacion de componentes, para el correcto funcionamiento de las interfaces de la pagina.
+
+### Instalar:
+
+### `npm install`
+
+### `npm install react-player --save`
+
+### `npm install react-spotify-player`
+
+### `npm install --save styled-components`
+
+### `npm install react-animate-on-scroll --save`
+
+### `npm install --save animate.css`
+
+### `npm install --save react-router-dom`
+
+Finalmente en el directorio del proyecto, utilize el siguiente comando para correr la aplicacion:
+
+### `npm start`
+
+#### Contenido Extra, tipico de archivo Readme:
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
