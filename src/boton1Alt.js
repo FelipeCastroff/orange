@@ -163,7 +163,7 @@ class DesktopContainer extends Component {
                     <a href="/boton1"> Lo Basico </a>
                   </Menu.Item>
                   <Menu.Item as="a">
-                    <a href="/boton2"> Speech Device SDK</a>
+                    <a href="/boton2"> Speech Devices SDK</a>
                   </Menu.Item>
                   <Menu.Item as="a">
                     <a href="/boton3">Implementacion Simple</a>
@@ -236,11 +236,10 @@ class MobileContainer extends Component {
           <Menu.Item as="a" active>
             Home
           </Menu.Item>
-          <Menu.Item as="a">Work</Menu.Item>
-          <Menu.Item as="a">Company</Menu.Item>
-          <Menu.Item as="a">Careers</Menu.Item>
-          <Menu.Item as="a">Log in</Menu.Item>
-          <Menu.Item as="a">Sign Up</Menu.Item>
+          <Menu.Item href="/" as="a">Home</Menu.Item>
+          <Menu.Item href="/boton1" as="a">Lo Basico</Menu.Item>
+          <Menu.Item href="/boton2" as="a">Speech Devices SDK</Menu.Item>
+          <Menu.Item href="/boton3" as="a">Implementacio simple</Menu.Item>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
