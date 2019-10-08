@@ -191,9 +191,14 @@ h1 {
 .info a {
   color: inherit;
 }
+
 .punto {
   font-size: 15px;
   color: green;
+}
+.puntonegro {
+  font-size: 15px;
+  color: black
 }
 .punto td:nth-child(1) {
   color: #ce5937;
