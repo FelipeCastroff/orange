@@ -17,6 +17,7 @@ import {
   Form
 } from "semantic-ui-react";
 import ScrollAnimation from "react-animate-on-scroll";
+import Footer from '../Footer';
 
 import Imagen1 from "../Imagenes/Imagen1.png";
 import VozTexto from "../Imagenes/speech-text.png";
@@ -75,7 +76,7 @@ const HomepageHeading = ({ mobile }) => (
         <Button
           primary
           size="huge"
-          href="https://www.youtube.com/watch?v=n7ovPp1RAew&feature=youtu.be"
+          href="https://www.youtube.com/watch?v=R0U1_bnU508&list=RDR0U1_bnU508&start_radio=1"
         >
           Get Started
           <Icon name="right arrow" />
@@ -125,16 +126,16 @@ class DesktopContainer extends Component {
             >
               <Container>
                 <Menu.Item as="a" active>
-                  <a href="/"> HOME</a>
+                  <a> HOME</a>
                 </Menu.Item>
                 <Menu.Item as="a">
-                  <a href="/boton1"> Lo Basico</a>
+                  <a href="/LoBasico"> Lo Basico</a>
                 </Menu.Item>
                 <Menu.Item as="a">
-                  <a href="/boton2">Speech Devices SDK</a>
+                  <a href="/SDK">Speech Devices SDK</a>
                 </Menu.Item>
                 <Menu.Item as="a">
-                  <a href="/boton3"> Implementacion Simple </a>
+                  <a href="/Example"> Implementacion Simple </a>
                 </Menu.Item>
                 <Menu.Item position="right">
                   <Button as="a" inverted={!fixed}
@@ -146,6 +147,7 @@ class DesktopContainer extends Component {
                     inverted={!fixed}
                     primary={fixed}
                     style={{ marginLeft: "0.5em" }}
+                    href = '/SignUp'
                   >
                     Sign Up
                   </Button>
@@ -191,13 +193,10 @@ class MobileContainer extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item as="a" active>
-            Home
-          </Menu.Item>
-          <Menu.Item href="/" as="a">Home</Menu.Item>
-          <Menu.Item href="/boton1" as="a">Lo Basico</Menu.Item>
-          <Menu.Item href="/boton2" as="a">Speech Devices SDK</Menu.Item>
-          <Menu.Item href="/boton3" as="a">Implementacion simple</Menu.Item>
+          <Menu.Item as="a" active>Home</Menu.Item>
+          <Menu.Item href="/LoBasico" as="a">Lo Basico</Menu.Item>
+          <Menu.Item href="/SDK" as="a">Speech Devices SDK</Menu.Item>
+          <Menu.Item href="/Example" as="a">Implementacion simple</Menu.Item>
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
@@ -213,10 +212,10 @@ class MobileContainer extends Component {
                   <Icon name="sidebar" />
                 </Menu.Item>
                 <Menu.Item position="right">
-                  <Button as="a" inverted>
+                  <Button as="a" inverted href="/Login">
                     Log in
                   </Button>
-                  <Button as="a" inverted style={{ marginLeft: "0.5em" }}>
+                  <Button  href="/SignUp" as="a" inverted style={{ marginLeft: "0.5em" }}>
                     Sign Up
                   </Button>
                 </Menu.Item>
@@ -493,71 +492,7 @@ const HomepageLayout = () => (
     </div>
 
     <Segment inverted vertical style={{ padding: "5em 0em" }}>
-      <Container>
-        <Grid divided inverted stackable>
-          <Grid.Row>
-            <Grid.Column width={3}>
-              <Header inverted as="h4" content="Contactanos" />
-              <List link inverted>
-                <List.Item
-                  as="a"
-                  href="https://p7.hiclipart.com/preview/405/543/746/dio-brando-internet-meme-know-your-meme-rage-comic-jojo-s-bizarre-adventure-others.jpg"
-                >
-                  Dio
-                </List.Item>
-                <List.Item as="a" href="https://www.trifenix.io">
-                  Contact Us
-                </List.Item>
-                <List.Item as="a">+56952984672</List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={3}>
-              <Header inverted as="h4" content="Instagrams" />
-              <List link inverted>
-                <List.Item
-                  as="a"
-                  href="https://www.instagram.com/_alondra_hg/?hl=es-la"
-                >
-                  Sofia Gallardo
-                </List.Item>
-                <List.Item
-                  as="a"
-                  href="https://www.instagram.com/weon.simio/?hl=es-la"
-                >
-                  Fernando Del Pino
-                </List.Item>
-                <List.Item
-                  as="a"
-                  href="https://www.instagram.com/ignacio_lopez_nicolas/?hl=es-la"
-                >
-                  Ignacio Lopez
-                </List.Item>
-                <List.Item
-                  as="a"
-                  href="https://www.instagram.com/felipe_castro.exe/?hl=es-la"
-                >
-                  Felipe Castro
-                </List.Item>
-                <List.Item
-                  as="a"
-                  href="https://www.instagram.com/trifenix.io/?hl=es-la"
-                >
-                  Trifenix.io
-                </List.Item>
-              </List>
-            </Grid.Column>
-            <Grid.Column width={7}>
-              <Header as="h4" inverted>
-                Footer Header
-              </Header>
-              <p>
-                Extra space for a call to action inside the footer that could
-                help re-engage users.
-              </p>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
-      </Container>
+      <Footer></Footer>
     </Segment>
   </ResponsiveContainer>
 );
