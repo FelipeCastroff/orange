@@ -9,15 +9,17 @@ import Boton3 from "./boton3";
 import Login from './Login';
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import SignUp from "./SignUp";
 
 const App = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path="/" component={Vista} />
-      <Route exact path="/boton1" component={Boton1} />
-      <Route exact path="/boton2" component={Boton2} />
-      <Route exact path="/boton3" component={Boton3} />
+      <Route exact path="/LoBasico" component={Boton1} />
+      <Route exact path="/SDK" component={Boton2} />
+      <Route exact path="/Example" component={Boton3} />
       <Route exact path="/Login"  component={Login} />
+      <Route exact path="/SignUp"  component={SignUp} />
     </Switch>
   </BrowserRouter>
 );
