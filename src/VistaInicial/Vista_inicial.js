@@ -78,7 +78,7 @@ const HomepageHeading = ({ mobile }) => (
           size="huge"
           href="https://www.youtube.com/watch?v=R0U1_bnU508&list=RDR0U1_bnU508&start_radio=1"
         >
-          Get Started
+          Empecemos
           <Icon name="right arrow" />
         </Button>
       </Container>
