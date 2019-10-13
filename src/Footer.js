@@ -33,7 +33,7 @@ export default () =>(
                 <List.Item as="a" href="https://www.trifenix.io">
                   Contact Us
                 </List.Item>
-                <List.Item as="a">+56952984672</List.Item>
+                <List.Item as="a">+56912345678</List.Item>
               </List>
             </Grid.Column>
             <Grid.Column width={3}>
