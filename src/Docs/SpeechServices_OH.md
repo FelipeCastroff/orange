@@ -4,65 +4,93 @@
 
 ---
 
-## Introducción
+# Introducción
 
-En la medida que avanzan a pasos agigantados las nuevas tecnologias, es posible apreciar las multiples areas de desarrollo que estos avances generan, es dado a esto, que muchas empresas buscan el optimizar los procesos de distintas indoles que estas manejan, para mejorar rendimiento, obtener mejores oportunidades de ingresos y lograr tareas con mayor eficacia u eficiencia. Dentro de estas empresas que han logrado gran desarrollo tecnologico en este ultimo tiempo, tenemos presente a la reconocida "Microsoft", la cual cuenta hoy en dia, con un sin fin de tecnologias en distintas areas de investigacion y desarrollo, dentro de estas tecnologias tenemos presente los servicios de "Microsoft Azure", un servicio capaz de otorgarle a los desarrolladores un mundo de informatica en la nube para las distintas herramientas que se implementan a la hora de crear, manejar y utilizar las distintas tecnologias del mundo hoy ne dia. Hoy vamos a hablar principalmente de una de estas tantas tecnologias que mas nos llaman la atencion: **Speech Service** el cual es un servicio de voz que busca expandir la traduccion de charlas y conferencias a simples caracteres, ayudando en distintas areas que aun desconocemos.
+### En la medida que avanzan a pasos agigantados las nuevas tecnologias, es posible apreciar las multiples areas de desarrollo que estos avances generan, es dado a esto, que muchas empresas buscan el optimizar los procesos de distintas indoles que estas manejan, para mejorar rendimiento, obtener mejores oportunidades de ingresos y lograr tareas con mayor eficacia u eficiencia. Dentro de estas empresas que han logrado gran desarrollo tecnologico en este ultimo tiempo, tenemos presente a la reconocida "Microsoft", la cual cuenta hoy en dia, con un sin fin de tecnologias en distintas areas de investigacion y desarrollo, dentro de estas tecnologias tenemos presente los servicios de "Microsoft Azure", un servicio capaz de otorgarle a los desarrolladores un mundo de informatica en la nube para las distintas herramientas que se implementan a la hora de crear, manejar y utilizar las distintas tecnologias del mundo hoy ne dia. Hoy vamos a hablar principalmente de una de estas tantas tecnologias que mas nos llaman la atencion: **Speech Service** el cual es un servicio de voz que busca expandir la traduccion de charlas y conferencias a simples caracteres, ayudando en distintas areas que aun desconocemos.
 
 ---
 
-#### Ustedes se Preguntaran...
+## Ustedes se Preguntaran...
 
-#### ¿A que nos referimos con los servicios de Voz?
+## ¿A que nos referimos con los servicios de Voz?
 
-Los servicios de voz de Azure se dividen en 3 categorías las cuales estan formadas por los servicios de voz a texto, texto a voz y traducción de voz. Ademas de facilitar este trabajo con el SDK de voz, el SDK de dispositivos de voz o las API de Rest.
+### Los servicios de voz de Azure se dividen en 3 categorías las cuales estan formadas por los servicios de voz a texto, texto a voz y traducción de voz. Ademas de facilitar este trabajo con el SDK de voz, el SDK de dispositivos de voz o las API de Rest.
 
 ## Estos son los servicios de voz
 
-#### Speech to Text
+# Speech to Text
 
-La transcripción de conversaciones captura la voz en tiempo real para que todos los participantes de la reunión puedan participar de lleno en la discusión, identificar lo que ha dicho cada uno y cuándo se ha dicho y continuar rápidamente con los pasos siguientes.
+### La transcripción de conversaciones captura la voz en tiempo real para que todos los participantes de la reunión puedan participar de lleno en la discusión, identificar lo que ha dicho cada uno y cuándo se ha dicho y continuar rápidamente con los pasos siguientes.
 
-#### Text to Speech
+# Text to Speech
 
-Su funcion es compilar aplicaciones y servicios que se dirijan a los usuarios de forma natural, por lo que mejorarán la accesibilidad y la usabilidad. Esto posibilita el convertir texto en audio en tiempo casi real, reproducirlo y guárdarlo como archivo para usarlo más adelante. Text to Speech está disponible en las versiones Neural y Standard.
+### Su funcion es compilar aplicaciones y servicios que se dirijan a los usuarios de forma natural, por lo que mejorarán la accesibilidad y la usabilidad. Esto posibilita el convertir texto en audio en tiempo casi real, reproducirlo y guárdarlo como archivo para usarlo más adelante. Text to Speech está disponible en las versiones Neural y Standard.
 
-#### Traducción de voz
+# Traducción de voz
 
-Incorporar a su aplicación funcionalidad de traducción de voz en tiempo real para cualquiera de los idiomas admitidos y reciba la traducción en forma de texto o de voz. Los modelos de Speech Translation se basan en tecnologías vanguardistas de reconocimiento de voz y traducción automática neuronal (NMT). Están optimizados para comprender la forma de hablar de las personas en la vida real y generar traducciones de una calidad excepcional.
+### Incorporar a su aplicación funcionalidad de traducción de voz en tiempo real para cualquiera de los idiomas admitidos y reciba la traducción en forma de texto o de voz. Los modelos de Speech Translation se basan en tecnologías vanguardistas de reconocimiento de voz y traducción automática neuronal (NMT). Están optimizados para comprender la forma de hablar de las personas en la vida real y generar traducciones de una calidad excepcional.
+
+# Obtención de ejemplos de codigos
+
+### El código de ejemplo está disponible en GitHub para cada uno de los servicios de voz de Azure. En estos ejemplos se tratan escenarios comunes como la lectura de audio de un archivo o flujo, el reconocimiento continuo y de una sola emisión, y el trabajo con modelos personalizados. Use estos vínculos para ver ejemplos de SDK y REST:
+
+- ####
+  - [Ejemplos de conversión de voz a texto, texto a voz y traducción de voz (SDK) ][1]
+  - [Ejemplos de transcripción de Azure Batch (REST)][2]
+  - [Ejemplos de texto a voz (REST)][3]
+  - [Ejemplos del asistente virtual por voz (SDK)][4]
+
+[1]: https://github.com/Azure-Samples/cognitive-services-speech-sdk
+[2]: https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/batch
+[3]: https://github.com/Azure-Samples/Cognitive-Speech-TTS
+[4]: https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/batch
+
+## Personalización de su experiencia de voz
+
+### Los servicios de voz de Azure funcionan bien con los modelos integrados; sin embargo, es posible que desee personalizar y optimizar más la experiencia para su producto o entorno. Las opciones de personalización abarcan desde la optimización de modelos acústicos a fuentes de voz únicas para su marca. Una vez que haya creado un modelo personalizado, podrá usarlo con cualquiera de los servicios de voz de Azure.
+
+| Speech Service | Plataforma               | Descripción                                                                                                                                                                                          |
+| -------------- | :----------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Voz a texto    | [Custom Speech][1.2]     | El reconocimiento de voz personalizado se adapta a sus necesidades y datos disponibles. Elimine las barreras del reconocimiento de voz, como el estilo de habla, el vocabulario y el ruido de fondo. |
+| Text-to-Speech | [Voz personalizada][2.2] | Cree una voz reconocible única para las aplicaciones de texto a voz con los datos de habla disponibles. Puede optimizar aún más las salidas de voz ajustando un conjunto de parámetros de voz.       |
+
+[1.2]: https://aka.ms/customvoice
+[2.2]: https://aka.ms/customvoice
 
 ---
 
 ## Documentacion y Detalles
 
-Es posible implementar Speech Services en distintos tipos de lenguajes, estableciendo el uso de este servicio en un corto periodo de tiempo. Para utilizar el **SDK** puede escoger uno de estos lenguajes de programacion [C#][1], [.NET][2], [Unity][3], [Python][4], [Node.JS][5] y [JavaScript][6]
+### Es posible implementar Speech Services en distintos tipos de lenguajes, estableciendo el uso de este servicio en un corto periodo de tiempo. Para utilizar el **SDK** puede escoger uno de estos lenguajes de programacion [C#][1.3], [.NET][2.3], [Unity][3.3], [Python][4.3], [Node.JS][5.3] y [JavaScript][6.3]
 
-[1]: https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/quickstart-csharp-dotnet-windows
-[2]: https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/quickstart-csharp-dotnet-windows
-[3]: https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/quickstart-csharp-unity
-[4]: https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/quickstart-csharp-unity
-[5]: https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/quickstart-js-node
-[6]: https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/quickstart-js-browser
+[1.3]: https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/quickstart-csharp-dotnet-windows
+[2.3]: https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/quickstart-csharp-dotnet-windows
+[3.3]: https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/quickstart-csharp-unity
+[4.3]: https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/quickstart-csharp-unity
+[5.3]: https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/quickstart-js-node
+[6.3]: https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/quickstart-js-browser
 
-#### Permite realizar varias tareas:
+# Permite realizar varias tareas:
 
-- Texto a Voz
-- Palabras de Activacion Personalizadas
-- Traduccion
-- Transcripcion de Conversaciones
-- Asistente Virtual por Voz
-- Personalizacion Listas de Frases
+- ###
+  - Texto a Voz
+  - Palabras de Activacion Personalizadas
+  - Traduccion
+  - Transcripcion de Conversaciones
+  - Asistente Virtual por Voz
+  - Personalizacion Listas de Frases
 
-## Conversion de Voz a Texto
+# Conversion de Voz a Texto
 
-La conversión de voz a texto de Servicios de voz de Azure, también conocida simplemente como voz a texto, permite la transcripción en tiempo real de secuencias de audio a texto que las aplicaciones, herramientas o dispositivos pueden usar, mostrar o actuar como ante una entrada de comandos. Este servicio funciona con la misma tecnología de reconocimiento que Microsoft utiliza para los productos de Cortana y Office, y funciona sin problemas con la traducción y el servicio de texto a voz.
+### La conversión de voz a texto de Servicios de voz de Azure, también conocida simplemente como voz a texto, permite la transcripción en tiempo real de secuencias de audio a texto que las aplicaciones, herramientas o dispositivos pueden usar, mostrar o actuar como ante una entrada de comandos. Este servicio funciona con la misma tecnología de reconocimiento que Microsoft utiliza para los productos de Cortana y Office, y funciona sin problemas con la traducción y el servicio de texto a voz.
 
-## Personalizacion
+# Personalizacion
 
-Además del modelo de línea de base estándar usado por Servicios de voz, puede personalizar modelos para sus necesidades con los datos disponibles para superar barreras de reconocimiento de voz tales como el estilo de habla, el vocabulario y el ruido de fondo. Puede consultar todo esto en [Custom Speech](https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/how-to-custom-speech).
+### Además del modelo de línea de base estándar usado por Servicios de voz, puede personalizar modelos para sus necesidades con los datos disponibles para superar barreras de reconocimiento de voz tales como el estilo de habla, el vocabulario y el ruido de fondo. Puede consultar todo esto en [Custom Speech](https://docs.microsoft.com/es-mx/azure/cognitive-services/speech-service/how-to-custom-speech).
 
-## Además...
+# Además...
 
-Este servicio busca además, ser utilizado en escenarios empresariales, imagine las ventajas de transcibir facilmente llamadas, conferencias u reuniones, donde quede plasmado en texto cada una de las cosas que se hablaron y ademas saber quien dijo que cosa. Speech Service es un servicio prometedor que optimiza buscando de manera eficiente el registrar informacion al hablar, dentro de sus capacidades.
+### Este servicio busca además, ser utilizado en escenarios empresariales, imagine las ventajas de transcibir facilmente llamadas, conferencias u reuniones, donde quede plasmado en texto cada una de las cosas que se hablaron y ademas saber quien dijo que cosa. Speech Service es un servicio prometedor que optimiza buscando de manera eficiente el registrar informacion al hablar, dentro de sus capacidades.
 
 ---
 
@@ -70,13 +98,13 @@ Este servicio busca además, ser utilizado en escenarios empresariales, imagine 
 
 - ## ¿Que es el Speech SDK?
 
-  Speech SDK es un kit de desarrollo de software (SDK) que proporciona aplicaciones de acceso a las funciones del servicio Voz, lo que facilita el desarrollo de software habilitado para la voz. Actualmente, los SDK proporcionan acceso a voz a texto, texto a voz, traducción de voz ,entre otras.[ (mas informacion)](https://docs.microsoft.com/es-es/azure/cognitive-services/speech-service/speech-sdk)
+  ### Speech SDK es un kit de desarrollo de software (SDK) que proporciona aplicaciones de acceso a las funciones del servicio Voz, lo que facilita el desarrollo de software habilitado para la voz. Actualmente, los SDK proporcionan acceso a voz a texto, texto a voz, traducción de voz ,entre otras.[ (mas informacion)](https://docs.microsoft.com/es-es/azure/cognitive-services/speech-service/speech-sdk)
 
 - ## ¿Que son los Speech Devices?
 
-  Speech Devices SDK es una biblioteca preajustada que se combina con kits de desarrollo de matriz de micrófono especialmente diseñados. Funcionan con una amplia variedad de dispositivos y fuentes de audio, puede llevar sus aplicaciones de voz al siguiente nivel con hardware y software compatibles
+  ### Speech Devices SDK es una biblioteca preajustada que se combina con kits de desarrollo de matriz de micrófono especialmente diseñados. Funcionan con una amplia variedad de dispositivos y fuentes de audio, puede llevar sus aplicaciones de voz al siguiente nivel con hardware y software compatibles
 
-  Speech Devices SDK emplea Speech SDK para enviar el audio procesado por un algoritmo avanzado de procesamiento de audio desde la matriz de micrófonos del dispositivo a los Servicios de voz que son los tres nombrados anteriormente.[ (mas informacion)](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/overview)
+  ### Speech Devices SDK emplea Speech SDK para enviar el audio procesado por un algoritmo avanzado de procesamiento de audio desde la matriz de micrófonos del dispositivo a los Servicios de voz que son los tres nombrados anteriormente.[ (mas informacion)](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/overview)
 
   &nbsp;
 
@@ -90,55 +118,56 @@ Este servicio busca además, ser utilizado en escenarios empresariales, imagine 
 
 ## 1. Servicio de Texto a Voz
 
-La opción de texto a voz de los servicios de voz de Azure es un servicio que permite que sus aplicaciones, herramientas o dispositivos conviertan el texto en una voz sintetizada natural similar a la humana. Puede elegir entre voces estándar y neuronales, o puede crear su propia voz personalizada única para su producto o marca. Tiene más de 75 voces estándar disponibles en más de 45 idiomas y configuraciones regionales y 5 voces neuronales que están disponibles en 4 idiomas y configuraciones regionales
+### La opción de texto a voz de los servicios de voz de Azure es un servicio que permite que sus aplicaciones, herramientas o dispositivos conviertan el texto en una voz sintetizada natural similar a la humana. Puede elegir entre voces estándar y neuronales, o puede crear su propia voz personalizada única para su producto o marca. Tiene más de 75 voces estándar disponibles en más de 45 idiomas y configuraciones regionales y 5 voces neuronales que están disponibles en 4 idiomas y configuraciones regionales
 
-### **Voces del Servicio**
+## **Voces del Servicio**
 
-La opción de texto a voz de los servicios de voz de Azure es un servicio que permite que sus aplicaciones, herramientas o dispositivos conviertan el texto en una voz sintetizada natural similar a la humana. Puede elegir entre voces estándar y neuronales, o puede crear su propia voz personalizada única para su producto o marca. Tiene más de 75 voces estándar disponibles en más de 45 idiomas y configuraciones regionales y 5 voces neuronales que están disponibles en 4 idiomas y configuraciones regionales
+### La opción de texto a voz de los servicios de voz de Azure es un servicio que permite que sus aplicaciones, herramientas o dispositivos conviertan el texto en una voz sintetizada natural similar a la humana. Puede elegir entre voces estándar y neuronales, o puede crear su propia voz personalizada única para su producto o marca. Tiene más de 75 voces estándar disponibles en más de 45 idiomas y configuraciones regionales y 5 voces neuronales que están disponibles en 4 idiomas y configuraciones regionales
 
 ## 2. Servicio de Conversacion de Voz a Texto
 
-La conversión de voz a texto de Servicios de voz de Azure, también conocida simplemente como voz a texto, permite la transcripción en tiempo real de secuencias de audio a texto que las aplicaciones, herramientas o dispositivos pueden usar, mostrar o actuar como ante una entrada de comandos. Este servicio funciona con la misma tecnología de reconocimiento que Microsoft utiliza para los productos de Cortana y Office, y funciona sin problemas con la traducción y el servicio de texto a voz
+### La conversión de voz a texto de Servicios de voz de Azure, también conocida simplemente como voz a texto, permite la transcripción en tiempo real de secuencias de audio a texto que las aplicaciones, herramientas o dispositivos pueden usar, mostrar o actuar como ante una entrada de comandos. Este servicio funciona con la misma tecnología de reconocimiento que Microsoft utiliza para los productos de Cortana y Office, y funciona sin problemas con la traducción y el servicio de texto a voz
 
-De forma predeterminada, el servicio de voz a texto utiliza el modelo de lenguaje universal. Este modelo se entrenó con datos propiedad de Microsoft y se implementa en la nube. Resulta óptimo para escenarios de conversación y dictado. Si usa voz a texto para el reconocimiento y la transcripción en un entorno único, puede crear y entrenar modelos acústicos, lenguaje y pronunciación personalizados para dirigir el sonido ambiental o vocabulario específico del sector.
+### De forma predeterminada, el servicio de voz a texto utiliza el modelo de lenguaje universal. Este modelo se entrenó con datos propiedad de Microsoft y se implementa en la nube. Resulta óptimo para escenarios de conversación y dictado. Si usa voz a texto para el reconocimiento y la transcripción en un entorno único, puede crear y entrenar modelos acústicos, lenguaje y pronunciación personalizados para dirigir el sonido ambiental o vocabulario específico del sector.
 
 ## 3. Servicio de Traduccion de voz
 
-La traducción de voz de Servicios de voz de Azure permite la traducción voz a voz y voz a texto de secuencias de audio en varios idiomas en tiempo real. Con el SDK de voz, sus aplicaciones, herramientas y los dispositivos tienen acceso a las transcripciones de origen y a las salidas de traducción del audio proporcionadas. Se devuelven resultados provisionales de transcripción y traducción cuando se detecta la voz y los resultados finales se pueden convertir en voz sintetizada.
+### La traducción de voz de Servicios de voz de Azure permite la traducción voz a voz y voz a texto de secuencias de audio en varios idiomas en tiempo real. Con el SDK de voz, sus aplicaciones, herramientas y los dispositivos tienen acceso a las transcripciones de origen y a las salidas de traducción del audio proporcionadas. Se devuelven resultados provisionales de transcripción y traducción cuando se detecta la voz y los resultados finales se pueden convertir en voz sintetizada.
 
-De forma predeterminada, el servicio de voz a texto utiliza el modelo de lenguaje universal. Este modelo se entrenó con datos propiedad de Microsoft y se implementa en la nube. Resulta óptimo para escenarios de conversación y dictado. Si usa voz a texto para el reconocimiento y la transcripción en un entorno único, puede crear y entrenar modelos acústicos, lenguaje y pronunciación personalizados para dirigir el sonido ambiental o vocabulario específico del sector.
+### De forma predeterminada, el servicio de voz a texto utiliza el modelo de lenguaje universal. Este modelo se entrenó con datos propiedad de Microsoft y se implementa en la nube. Resulta óptimo para escenarios de conversación y dictado. Si usa voz a texto para el reconocimiento y la transcripción en un entorno único, puede crear y entrenar modelos acústicos, lenguaje y pronunciación personalizados para dirigir el sonido ambiental o vocabulario específico del sector.
 
 ### Mas informacion sobre los servicios de azure en el siguiente [enlace](https://azure.microsoft.com/es-es/services/).
 
 ---
 
-## Ejemplo en Python
+# Ejemplo en Python
 
-### Introducción:
+## Introducción:
 
-El ejemplo a continuación tiene por objetivo mostrar un funcionamiento básico de como speech service puede ser utilizado para un gran numero de tareas y ejemplos.
+### El ejemplo a continuación tiene por objetivo mostrar un funcionamiento básico de como speech service puede ser utilizado para un gran numero de tareas y ejemplos.
 
-Se presentará una sección en el código la cual será la encargada de transformar voz a texto y otra se encargará de texto a voz descritas dentro del código.
+### Se presentará una sección en el código la cual será la encargada de transformar voz a texto y otra se encargará de texto a voz descritas dentro del código.
 
-#### Requisitos Previos:
+## Requisitos Previos:
 
-- Una clave de suscripción de Azure para los servicios de voz. [Obtenga una gratis](https://docs.microsoft.com/es-es/azure/cognitive-services/speech-service/get-started)!
-- Python 3.5 o versiones posteriores. Puedes descargarlo [aquí!](https://www.python.org/downloads/)
-- El paquete del SDK de Voz de Python está disponible para estos sistemas operativos:
+- ###
+  - Una clave de suscripción de Azure para los servicios de voz. [Obtenga una gratis](https://docs.microsoft.com/es-es/azure/cognitive-services/speech-service/get-started)!
+  - Python 3.5 o versiones posteriores. Puedes descargarlo [aquí!](https://www.python.org/downloads/)
+  - El paquete del SDK de Voz de Python está disponible para estos sistemas operativos:
   - Windows: x64 y x86.
   - Linux: Ubuntu 16.04, Ubuntu 18.04, Debian 9 en x64
   - Mac: macOS X versión 10.12 o posterior.
-- Para Window se necesita [Microsoft Visual C++ Redistributable para Visual Studio 2019](https://support.microsoft.com/es-cl/help/2977003/the-latest-supported-visual-c-downloads).
+  - Para Window se necesita [Microsoft Visual C++ Redistributable para Visual Studio 2019](https://support.microsoft.com/es-cl/help/2977003/the-latest-supported-visual-c-downloads).
 
-#### Instalación de Speech SDK:
+## Instalación de Speech SDK:
 
-Para la instalción de Speech SDK debemos ejecutar este comando para instalar el paquete de Python desde PyPl para el SDK de voz:
+### Para la instalción de Speech SDK debemos ejecutar este comando para instalar el paquete de Python desde PyPl para el SDK de voz:
 
-##### `pip install azure-cognitiveservices-speech`
+#### `pip install azure-cognitiveservices-speech`
 
-## Instalacion y uso del SDK de voz con Visual Studio Code
+# Instalacion y uso del SDK de voz con Visual Studio Code
 
-Una vez ya cumplidos los requisitos previos para windows necesitaremos que abra Visual Studio Code e instale la extensión de Python. Seleccione **File** > **Preferences** > **Extensions** en el menú. Busque Python.
+### Una vez ya cumplidos los requisitos previos para windows necesitaremos que abra Visual Studio Code e instale la extensión de Python. Seleccione **File** > **Preferences** > **Extensions** en el menú. Busque Python.
 
 <img src="https://orange-heist.netlify.com/static/media/I-Example1.5744cd73.png" width="850" />
 
