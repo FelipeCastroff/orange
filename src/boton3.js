@@ -22,7 +22,6 @@ import Imagen4 from './Imagenes/I-Example4.png'
 import DownloadLink from "react-download-link";
 import ScrollAnimation from "react-animate-on-scroll";
 import Footer from "./Footer";
-import codigo from './Descargas/SpeechService.py';
 
 const getWidth = () => {
   const isSSR = typeof window === "undefined";
