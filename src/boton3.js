@@ -309,11 +309,12 @@ const HomepageLayout = () => (
             <tr style={{ fontSize: '1.33me' }}>&bull; Deberá crear un archivo de código fuente de Python speechsdk.py mediante la selección del icono de nuevo archivo.</tr>
             <tr style={{ fontSize: '1.33me' }}>&bull; Copie, pegue y guarde el código de Python en el archivo recién creado.</tr>
             {/*<CPython Centered></CPython>*/}
-            <DownloadLink
+            {/*<DownloadLink
               label="Aquí el código"
-              filename="Aún no puedo hacer funcionar esto.py"
-              exportFile={() => ""}
-            />
+              filename="SpeechService.py"
+              exportFile={() => 'Buenas tardes'}
+            />*/}
+            <a href='https://drive.google.com/file/d/1Z6EodCTFLgRArOt2TX4-EnW5PTtX5i_P/view?usp=sharing'>Aquí el código</a>
           </Container>
         </Grid.Column>
         <Grid.Column width={8}>

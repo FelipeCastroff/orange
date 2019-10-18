@@ -73,14 +73,6 @@ const HomepageHeading = ({ mobile }) => (
             marginTop: mobile ? "0.5em" : "1.5em"
           }}
         />
-        <Button
-          primary
-          size="huge"
-          href="https://www.youtube.com/watch?v=R0U1_bnU508&list=RDR0U1_bnU508&start_radio=1"
-        >
-          Empecemos
-          <Icon name="right arrow" />
-        </Button>
       </Container>
     </Container>
   </div>

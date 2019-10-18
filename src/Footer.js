@@ -23,10 +23,9 @@ export default () => (
     <Grid divided inverted stackable>
       <Grid.Row>
         <Grid.Column width={3}>
-          <Header inverted as="h4" content="Acerca De..." />
+          <Header inverted as="h4" content="About us" />
           <List link inverted>
             <List.Item>
-              <Modal></Modal>
             </List.Item>
             <List.Item as="a" href="https://www.trifenix.io">
               Contactanos!
@@ -34,7 +33,7 @@ export default () => (
           </List>
         </Grid.Column>
         <Grid.Column width={3}>
-          <Header inverted as="h4" content="Instagrams" />
+          <Header inverted as="h4" content="Instagrams" icon='instagram' />
           <List link inverted>
             <List.Item
               as="a"
@@ -72,7 +71,7 @@ export default () => (
           <Header as="h4" inverted>
             Ultimas novedades
           </Header>
-          <p>Me gustaria decir que existen pero lamentablemente no.</p>
+          <Modal></Modal>
         </Grid.Column>
       </Grid.Row>
     </Grid>
