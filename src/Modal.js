@@ -17,8 +17,9 @@ class ModalModalExample extends Component {
     const { markdown } = this.state;
     return (
       <Modal
+        size={'large'}
         trigger={
-          <Button as="a" color="blue">
+          <Button as="a" color="grey" inverted size='tiny' >
             Documentacion MarkDown
           </Button>
         }
